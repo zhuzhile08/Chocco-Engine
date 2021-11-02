@@ -9,44 +9,49 @@
 #include <iostream>
 #include <memory>
 
-#include "gameVar.h"
-#include "gameObj.h"
-#include "SDL_addons.h"
+#include "util/gameVar.h"
+#include "obj/sprite.h"
+#include "obj/font.h"
+#include "obj/spriteGroup.h"
+#include "util/loaders.h"
+#include "util/math.h"
 
 #include <SDL.h>
 #include <SDL_image.h>
 #include <SDL_ttf.h>
 
-class Window
-{
-protected:
-	// events
-	SDL_Event event;
+namespace ChoccoEngine {
+	class GameManager
+	{
+	protected:
+		// events
+		SDL_Event event;
 
-	SDL_Window* window;
-	SDL_Renderer* renderer;
+		SDL_Window* window;
+		SDL_Renderer* renderer;
 
-	void events();
+		void events();
 
-	void drawSprite(std::shared_ptr<Sprite> sprite);
-	void drawTexture(SDL_Texture* texture, int x, int y);
-	void drawFont(std::shared_ptr<Font> font);
-	
-	void drawAllSprites(std::shared_ptr<SpriteGroup> group);
+		void drawSprite(std::shared_ptr<Sprite> sprite);
+		void drawTexture(SDL_Texture* texture, int x, int y);
+		void drawFont(std::shared_ptr<Font> font);
+		
+		void drawAllSprites(std::shared_ptr<SpriteGroup> group);
 
-	std::shared_ptr<Font> helloLmao;
+		std::shared_ptr<Font> helloLmao;
 
-	std::shared_ptr<Sprite> test;
+		std::shared_ptr<Sprite> test;
 
-	SDL_Texture* texture;
+		SDL_Texture* texture;
 
-public:
-	bool running;
-	Window();
-	~Window();
-	void loadScene();
-	void unloadScene();
-	void update();
-	
-};
+	public:
+		bool running;
+		GameManager();
+		~GameManager();
+		void loadScene();
+		void unloadScene();
+		void update();
+		
+	};
+}
 

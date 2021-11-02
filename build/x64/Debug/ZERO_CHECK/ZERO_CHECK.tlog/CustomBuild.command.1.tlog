@@ -1,0 +1,10 @@
+^D:\PROGRAMMING-RELATED\C++ PROJECTS\LIBRARIES\SDL\CHOCCOENGINE\BUILD\CMAKEFILES\AC88435E6AAD5038C94F5A9C0E2C005C\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" "-SD:/Programming-Related/C++ Projects/Libraries/SDL/ChoccoEngine" "-BD:/Programming-Related/C++ Projects/Libraries/SDL/ChoccoEngine/build" --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file "D:/Programming-Related/C++ Projects/Libraries/SDL/ChoccoEngine/build/ChoccoEngine.sln"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

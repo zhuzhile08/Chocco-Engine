@@ -1,7 +1,7 @@
 #pragma once
 
 #include <SDL_ttf.h>
-#include "../Util/SDL_Error.h"
+#include "../util/error.h"
 
 namespace ChoccoEngine {
 	void initTTF();

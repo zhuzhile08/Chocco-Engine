@@ -9,27 +9,27 @@ namespace ChoccoEngine {
 		}
 	}
 
-	void initIMGtypes(int flag) {
+	void initIMGtype(int flag) {
 		int initted = IMG_Init(flag);
 		if ((initted & flag) != flag) {
 			IMGError("IMG init failed to load required fomat support(s)");
 		}
 	}
 
-	void initPNG() {	// the only useful one tbh
-		initIMGTypes(IMG_INIT_PNG);
+	void initPNG() {
+		initIMGType(IMG_INIT_PNG);
 	}
 
-	void initJPG() {	// Image Rejects
-		initIMGTypes(IMG_INIT_JPG);
+	void initJPG() {
+		initIMGType(IMG_INIT_JPG);
 	}
 	
 	void initTIF() {
-		initIMGTypes(IMG_INIT_TIF);
+		initIMGType(IMG_INIT_TIF);
 	}
 
 	void initWEBP() {
-		initIMGTypes(IMG_INIT_WEBP);
+		initIMGType(IMG_INIT_WEBP);
 	}
 
 // function to initialize everything

@@ -1,7 +1,7 @@
 #pragma once
 
 #include <SDL.h>
-#include "../Util/SDL_Error.h"
+#include "../util/error.h"
 
 namespace ChoccoEngine {
 	void initSDL();

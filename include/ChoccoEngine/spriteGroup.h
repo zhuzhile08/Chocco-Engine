@@ -4,9 +4,9 @@
 #include <memory>
 #include <map>
 
-#include "../Util/math.h"
-#include "../Util/loaders.h"
-#include "sprite.h"
+#include <Cmath.h>
+#include <loaders.h>
+#include <sprite.h>
 
 #include <SDL.h>
 #include <SDL_image.h>

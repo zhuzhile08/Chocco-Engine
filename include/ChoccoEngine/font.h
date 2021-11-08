@@ -4,16 +4,17 @@
 #include <memory>
 #include <map>
 
-#include "../Util/math.h"
-#include "../Util/loaders.h"
-#include "gameObj.h"
+#include <Cmath.h>
+#include <loaders.h>
+#include <color.h>
+#include <object.h>
 
 #include <SDL.h>
 #include <SDL_image.h>
 #include <SDL_ttf.h>
 
 namespace ChoccoEngine {
-	struct Font : public GameObj {
+	struct Font : public Object {
 		std::string path, message;
 		int size;
 		SDL_Texture* texture;

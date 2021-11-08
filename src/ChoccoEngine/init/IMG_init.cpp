@@ -1,4 +1,4 @@
-#include "IMG_init.h"
+#include <ChoccoEngine/IMG_init.h>
 
 // initialize SDL_image
 

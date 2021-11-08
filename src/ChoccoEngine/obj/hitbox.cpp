@@ -18,16 +18,16 @@ namespace ChoccoEngine
 	* 
 	**/
 
-	LineHitbox::LineHitbox(Vector2f a, Vector2f b, Vector2f position) : a(a), b(b), c(b.x, a.y), position(position) { }
+	PolygonHitbox::PolygonHitbox(Vector2 a, Vector2 b, Vector2 c, Vector2 position) : a(a), b(b), c(c), position(position) { }
 
-	bool LineHitbox::collisionCheck(Vector2f p) {
+	bool PolygonHitbox::collisionCheck(Vector2 p) {
 		double m1 = (a.x * (c.y - a.y) + (p.y * a.y) * (c.x - a.x) - p.x * (c.y - a.y)) / ((b.y - a.y) * (c.x - a.x) - (b.x - a.x) * (c.y - a.y));
 		double m2 = (p.y - a.y - m1 * (b.y - a.y)) / (c.y - a.y);
 		if (m1 >= 0 && m2 >= 0 && (m1 + m2) <= 1) return true;
 		else return false;
 	}
 
-	void LineHitbox::move(Vector2f destPos) {
+	void PolygonHitbox::move(Vector2 destPos) {
 		position = destPos;
 	}
 
@@ -46,14 +46,14 @@ namespace ChoccoEngine
 	* 
 	**/
 
-	RectHitbox::RectHitbox(Vector2f c, Vector2f b, Vector2f position) : a(b.x, c.y), b(b), c(c), d(c.x, b.y), position(position) { }
+	RectHitbox::RectHitbox(Vector2 c, Vector2 b, Vector2 position) : a(b.x, c.y), b(b), c(c), d(c.x, b.y), position(position) { }
 
-	bool RectHitbox::collisionCheck(Vector2f p) {
+	bool RectHitbox::collisionCheck(Vector2 p) {
 		if (p.x <= a.x || p.x >= b.x || p.y >= c.y || p.y <= a.y) return true;
 		else return false;
 	}
 
-	void RectHitbox::move(Vector2f destPos) {
+	void RectHitbox::move(Vector2 destPos) {
 		position = destPos;
 	}
 
@@ -62,14 +62,14 @@ namespace ChoccoEngine
 	* The simplest form of colliders. it's very quick and efficient, perfect for sprites.
 	**/
 
-	CircleHitbox::CircleHitbox(double radius, Vector2f position) : radius(radius), position(position) { }
+	CircleHitbox::CircleHitbox(double radius, Vector2 position) : radius(radius), position(position) { }
 
-	bool CircleHitbox::collisionCheck(Vector2f p) {
+	bool CircleHitbox::collisionCheck(Vector2 p) {
 		if (pythagoras(position, p) == radius) return true;
 		else return false;
 	}
 
-	void CircleHitbox::move(Vector2f destPos) {
+	void CircleHitbox::move(Vector2 destPos) {
 		position = destPos;
 	}
 }

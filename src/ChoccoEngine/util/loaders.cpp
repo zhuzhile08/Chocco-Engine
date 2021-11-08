@@ -2,20 +2,6 @@
 
 namespace ChoccoEngine {
 	/**
-	 * Since I have no idea how SDL_Color works, I just created this small thing that creates a color for me
-	 * Has 4 values for the colors (a is for alpha)
-	**/
-
-	SDL_Color Color(int r, int g, int b, int a) {
-		SDL_Color color;
-		color.r = r;
-		color.g = g;
-		color.b = b;
-		color.a = a;
-		return color;
-	}
-
-	/**
 	* Loading images using SDL_Image.
 	* this can only load PNG images, because why would you need anything else
 	**/
@@ -25,7 +11,7 @@ namespace ChoccoEngine {
 
 #ifndef ndebug
 		if (texture == nullptr)
-			std::cout << "SDL load texture error" << IMG_GetError << std::endl;
+			SDLError("SDL load texture error");
 		return nullptr;
 #endif
 		return texture;
@@ -42,7 +28,7 @@ namespace ChoccoEngine {
 		TTF_Font* font = TTF_OpenFont(path.c_str(), size);
 #ifndef ndebug
 		if (font == nullptr) {
-			std::cout << "SDL load font error: " << TTF_GetError << std::endl;
+			TTFError("Load Font error");
 			return nullptr;
 		}
 #endif

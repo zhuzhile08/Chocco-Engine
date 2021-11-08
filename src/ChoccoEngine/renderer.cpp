@@ -23,6 +23,14 @@ namespace ChoccoEngine {
         delete renderer;
     }
 
+    void Renderer::clear() {
+        SDL_RenderClear(renderer);
+    }
+
+    void Renderer::present() {
+        SDL_RenderPresent(renderer);
+    }
+
     void Renderer::drawPoint(Vector2 pos, SDL_Color color) {
         SDL_Color last;
 

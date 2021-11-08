@@ -1,5 +1,4 @@
-#include "TTF_init.h"
-
+#include <ChoccoEngine/TTF_init.h>
 
 namespace ChoccoEngine {
 	void initTTF() {

@@ -1,4 +1,4 @@
-#include "initAll.h"
+#include <ChoccoEngine/initAll.h>
 
 namespace ChoccoEngine {
 	void initAll() {

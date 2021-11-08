@@ -1,7 +1,7 @@
 #pragma once
 
 #include <SDL_image.h>
-#include "../util/error.h"
+#include <error.h>
 
 namespace ChoccoEngine {
 	void initIMG();

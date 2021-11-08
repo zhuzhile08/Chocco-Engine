@@ -7,7 +7,7 @@ namespace ChoccoEngine {
 	**/
 
 	Font::Font(SDL_Renderer* renderer, std::string path, std::string name, SDL_Color color, Vector2 position, std::string message, int size)
-		: path(path), size(size), message(message), GameObj(position, Vector2(1, 1), 0, name) {
+		: path(path), size(size), message(message), Object(position, Vector2(1, 1), 0, name) {
 	
 		this->color = color;
 		font = loadFont(path, size);
@@ -31,7 +31,7 @@ namespace ChoccoEngine {
 
 
 	Font::Font(SDL_Renderer* renderer, std::string path, std::string name, SDL_Color color, Vector2 position, std::string message, int size, bool style[4], int outline, bool hinting[3], bool renderStyle[2], SDL_Color sColor)
-		: path(path), size(size), message(message), GameObj(position, Vector2(1, 1), 0, name) {
+		: path(path), size(size), message(message), Object(position, Vector2(1, 1), 0, name) {
 
 		this->color = color;
 		font = loadFont(path, size);

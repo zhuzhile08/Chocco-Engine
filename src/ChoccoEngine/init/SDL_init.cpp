@@ -1,4 +1,4 @@
-#include "SDL_init.h"
+#include <ChoccoEngine/SDL_init.h>
 
 // initialize SDL, what else to say
 

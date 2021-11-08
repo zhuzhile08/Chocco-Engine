@@ -1,4 +1,4 @@
-#include "MIX_init.h"
+#include <ChoccoEngine/MIX_init.h>
 
 namespace ChoccoEngine {
 	void initMIX() {

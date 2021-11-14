@@ -2,15 +2,14 @@
 
 // initialize SDL, what else to say
 
-namespace ChoccoEngine {
+namespace chocco {
 	void initSDL() {
 		if (SDL_Init(SDL_INIT_VIDEO) != 0) {
 			SDLError("SDL Init Error");
 		}
 
 		if (SDL_Init(SDL_INIT_AUDIO) == -1) {
-			printf("SDL_Init: %s\n", SDL_GetError());
-			exit(1);
+			SDLError("SDL audio init error");
 		}
 	}
 

@@ -1,4 +1,4 @@
-#include "color.h"
+#include <ChoccoEngine/color.h>
 
 namespace ChoccoEngine {
 	/**

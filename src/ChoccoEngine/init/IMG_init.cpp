@@ -2,18 +2,15 @@
 
 // initialize SDL_image
 
-namespace ChoccoEngine {
-	void initIMG() {
-		if ((IMG_Init(IMG_INIT_PNG) & IMG_INIT_PNG) != IMG_INIT_PNG) {
-			IMGError("IMG init error");
-		}
-	}
-
+namespace chocco {
 	void initIMGtype(int flag) {
+#ifndef ndebug
 		int initted = IMG_Init(flag);
+
 		if ((initted & flag) != flag) {
 			IMGError("IMG init failed to load required fomat support(s)");
 		}
+#endif
 	}
 
 	void initPNG() {

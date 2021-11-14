@@ -1,6 +1,6 @@
 #include <ChoccoEngine/initAll.h>
 
-namespace ChoccoEngine {
+namespace chocco{
 	void initAll() {
         initSDL();
         initIMGAll();

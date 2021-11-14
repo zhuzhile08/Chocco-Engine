@@ -1,6 +1,6 @@
 #include <ChoccoEngine/TTF_init.h>
 
-namespace ChoccoEngine {
+namespace chocco {
 	void initTTF() {
 		if (TTF_Init() != 0) {
 			TTFError("TTF init error");

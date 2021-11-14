@@ -1,7 +1,7 @@
-#include "hitbox.h"
+#include <ChoccoEngine/hitbox.h>
 
 
-namespace ChoccoEngine
+namespace chocco
 {
 	/** 
 	* hitboxes

@@ -1,4 +1,4 @@
-#include "renderer.h"
+#include <ChoccoEngine/renderer.h>
 
 /**
  * Renderer Class
@@ -7,7 +7,8 @@
 **/
 
 
-namespace ChoccoEngine {
+namespace chocco {
+    // constructors and destructors
     Renderer::Renderer() : renderer(nullptr), flags(NULL) { }
 
     Renderer::Renderer(SDL_Window* window, int flags) : flags(flags) {
@@ -31,6 +32,7 @@ namespace ChoccoEngine {
         SDL_RenderPresent(renderer);
     }
 
+    // primitive drawing
     void Renderer::drawPoint(Vector2 pos, SDL_Color color) {
         SDL_Color last;
 

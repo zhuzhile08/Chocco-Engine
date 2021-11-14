@@ -1,6 +1,6 @@
-#include "spriteGroup.h"
+#include <ChoccoEngine/spriteGroup.h>
 
-namespace ChoccoEngine {
+namespace chocco {
 	/**
 	 * Sprite Groups
 	 * Sprite Groups are just a Vector storing GameObjs
@@ -9,7 +9,7 @@ namespace ChoccoEngine {
 	**/
 
 	void SpriteGroup::add(std::shared_ptr<Sprite> obj) {
-		group.insert(std::pair<std::string, std::shared_ptr<Sprite>>(obj->name, obj));
+		group.insert(std::pair<std::string, std::shared_ptr<Sprite>>(obj->get_name(), obj));
 	}
 
 	void SpriteGroup::remove(std::string name, int check) {

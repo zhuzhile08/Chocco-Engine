@@ -1,6 +1,6 @@
 #include <ChoccoEngine/MIX_init.h>
 
-namespace ChoccoEngine {
+namespace chocco {
 	void initMIX() {
 		// Check load
 		if (Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 1024) != 0) {

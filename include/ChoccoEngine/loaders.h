@@ -10,6 +10,8 @@
 #include <SDL_image.h>
 #include <SDL_ttf.h>
 
+// Loading fonts, textures and audio *wip*
+
 namespace chocco {
 	SDL_Texture* loadTexture(SDL_Renderer* renderer, std::string path);
 

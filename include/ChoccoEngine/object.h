@@ -8,12 +8,13 @@ namespace chocco {
     class Object {
     protected:
         Vector2 position, scale;
-        std::string name;
+        std::string name = "Object";
         Object* parent = nullptr;
-        bool flip;
-        double rotation;
+        int flipped = 1;
+        double rotation = 0;
     public:
         Object();
+        Object(std::string name, Vector2 position, Vector2 scale, double rotation);
 
         std::string get_name();
 

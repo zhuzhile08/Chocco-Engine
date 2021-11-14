@@ -2,6 +2,8 @@
 
 #include "Cmath.h"
 
+// 3 types of basic hitboxes
+
 namespace chocco {
 	class PolygonHitbox {
 	private:

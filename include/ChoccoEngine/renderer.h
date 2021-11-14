@@ -27,12 +27,5 @@ namespace chocco {
 
         void drawRect(SDL_FRect rect, SDL_Color color, bool filled);
         void drawRect(SDL_FRect rect, SDL_Color color, double rotation, bool filled);
-
-        // void drawPolygon(Triangle tri, bool filled);
-
-        bool draw_circle(Vector2 center, int radius, SDL_Color color, bool filled);
-
-        bool draw_ellipse(float height, float radius, SDL_Color color);
-        bool draw_ellipse(float hradius, float vradius, SDL_Color color, SDL_Point center, float angle);
     };
 }

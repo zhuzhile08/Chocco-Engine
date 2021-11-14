@@ -1,11 +1,11 @@
 #pragma once
 
 #include <iostream>
-
-#include <Cmath.h>
-#include <object.h>
-
 #include <SDL.h>
+
+#include <ChoccoEngine/Cmath.h>
+#include <ChoccoEngine/object.h>
+#include <ChoccoEngine/loaders.h>
 
 #ifndef ndebug
 #include <ChoccoEngine/error.h>
@@ -29,7 +29,11 @@ namespace chocco {
 		Sprite();
 		Sprite(std::string name, Vector2 position, Vector2 scale, double rotation);
 		~Sprite();
+		
 		void flip();
+		void initTexture(SDL_Renderer* renderer, std::string path);
+		void initAttributes(SDL_Rect* clip, SDL_Point rotationCenter);
+
 		double get_width();
 		double get_height();
 	};

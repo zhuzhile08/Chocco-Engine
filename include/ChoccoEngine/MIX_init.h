@@ -1,7 +1,7 @@
 #pragma once
 
 #ifndef ndebug
-#include "error.h"
+#include <ChoccoEngine/error.h>
 #endif
 
 #include <SDL_mixer.h>

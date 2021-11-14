@@ -3,7 +3,7 @@
 #include <SDL_ttf.h>
 
 #ifndef ndebug
-#include "error.h"
+#include <ChoccoEngine/error.h>
 #endif
 
 namespace chocco {

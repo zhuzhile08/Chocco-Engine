@@ -4,10 +4,16 @@
 #include <SDL_image.h>
 
 #ifndef ndebug
-#include "error.h"
+#include <ChoccoEngine/error.h>
 #endif
 
 #include <Cmath.h>
+
+/**
+ * Renderer class
+ * It's just basicly a class build ontop of the SDL renderer, nothing special
+ * has some basic functions for loading and drawing textures -wip- and drawing some basic primitives
+**/
 
 namespace chocco {
     class Renderer {

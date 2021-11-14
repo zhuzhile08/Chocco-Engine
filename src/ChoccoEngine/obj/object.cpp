@@ -1,7 +1,7 @@
-#include "object.h"
+#include <ChoccoEngine/object.h>
 
-namespace ChoccoEngine {
-    Object::Object() : position(Vector2()), scale(Vector2()), rotation(0), name("Object") { }
+namespace chocco {
+    Object::Object(std::string name, Vector2 position, Vector2 scale, double rotation) : position(position), scale(scale), rotation(rotation), name(name) { }
 
     Vector2 Object::getLocalPos() {
         return position - parent->position;
@@ -13,5 +13,9 @@ namespace ChoccoEngine {
 
     void Object::rotate(double rot) {
         rotation += rot;
+    }
+
+    std::string Object::get_name() {
+        return name;
     }
 }

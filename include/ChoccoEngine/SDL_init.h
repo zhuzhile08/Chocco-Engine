@@ -1,9 +1,12 @@
 #pragma once
 
 #include <SDL.h>
-#include <error.h>
 
-namespace ChoccoEngine {
+#ifndef ndebug
+#include <ChoccoEngine/error.h>
+#endif
+
+namespace chocco {
 	void initSDL();
 	void quitSDL();
 }

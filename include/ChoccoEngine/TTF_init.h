@@ -1,9 +1,12 @@
 #pragma once
 
 #include <SDL_ttf.h>
-#include <error.h>
 
-namespace ChoccoEngine {
+#ifndef ndebug
+#include "error.h"
+#endif
+
+namespace chocco {
 	void initTTF();
 	void quitTTF();
 }

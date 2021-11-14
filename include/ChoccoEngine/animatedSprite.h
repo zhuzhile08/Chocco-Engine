@@ -6,7 +6,7 @@
 
 #include <SDL.h>
 
-namespace ChoccoEngine {
+namespace chocco {
     class AnimatedSprite : public Sprite {
         
     };

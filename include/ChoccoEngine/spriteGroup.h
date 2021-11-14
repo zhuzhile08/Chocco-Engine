@@ -12,7 +12,7 @@
 #include <SDL_image.h>
 #include <SDL_ttf.h>
 
-namespace ChoccoEngine {
+namespace chocco {
     class SpriteGroup {
 	public:
 		std::map <std::string, std::shared_ptr<Sprite>> group;

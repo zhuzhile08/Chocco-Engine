@@ -7,7 +7,7 @@
 #include <SDL_ttf.h>
 #include <SDL_mixer.h>
 
-namespace ChoccoEngine {
+namespace chocco {
 	void SDLError(std::string message);
 	void IMGError(std::string message);
 	void TTFError(std::string message);

@@ -1,8 +1,8 @@
 #pragma once
 
-#include <Cmath.h>
+#include "Cmath.h"
 
-namespace ChoccoEngine {
+namespace chocco {
 	class PolygonHitbox {
 	private:
 		Vector2 a, b, c, position;

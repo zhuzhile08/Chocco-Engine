@@ -1,8 +1,10 @@
 #pragma once
 
-#include <Cmath.h>
+#include <string>
 
-namespace ChoccoEngine {
+#include <ChoccoEngine/Cmath.h>
+
+namespace chocco {
     class Object {
     protected:
         Vector2 position, scale;

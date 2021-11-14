@@ -6,7 +6,7 @@
 
 #include <map>
 
-#include <object.h>
+#include <Cmath.h>
 
 #include <SDL.h>
 
@@ -23,35 +23,27 @@
  * note: this file isn't completely done jet. I want this to be more similar to Godots AnimationPlayer, whare you can animate basicly every single property of the sprite, like position, scale or rotation
 **/
 
-namespace ChoccoEngine {
-    struct Frame {
-        int timeToNext;
-        Object& object;
-        void nextframe();
-    };
-
+namespace chocco {
     class Animation {
-    private:
+    protected:
         bool loops;
-        std::map <std::string, Frame> animation;
-        std::string name;
+        bool playing;
+        int length;
     public:
+        std::map <std::string, int> animation;
+        std::string name;
         Animation();
-        std::string& name = name;
-        void addFrame(int number, SDL_Rect clip);
-        void addFrames();
+        void addFrame(int number, int);
         void play();
         void stop();
     };
 
     class Animator {
     protected:
-        std::map <std::string, SDL_Rect> animations;
+        std::map <std::string, Animation> animations;
     public:
         Animator();
         void addAnimation(Animation animation);
-        void addAnimations();
         void playAnimation(std::string animationName);
-
     };
 }

@@ -7,7 +7,7 @@
 
 #include <SDL.h>
 
-namespace ChoccoEngine {
+namespace chocco {
     class Sprite : public Object {
 	protected:
 		std::string path;

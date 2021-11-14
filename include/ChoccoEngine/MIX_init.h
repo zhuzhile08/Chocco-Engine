@@ -1,9 +1,12 @@
 #pragma once
 
-#include <SDL_mixer.h>
-#include <error.h>
+#ifndef ndebug
+#include "error.h"
+#endif
 
-namespace ChoccoEngine {
+#include <SDL_mixer.h>
+
+namespace chocco {
 	void initMIX();
 	void quitMIX();
 }

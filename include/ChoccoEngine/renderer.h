@@ -3,10 +3,13 @@
 #include <SDL.h>
 #include <SDL_image.h>
 
-#include <error.h>
+#ifndef ndebug
+#include "error.h"
+#endif
+
 #include <Cmath.h>
 
-namespace ChoccoEngine {
+namespace chocco {
     class Renderer {
     private:
         SDL_Renderer* renderer;

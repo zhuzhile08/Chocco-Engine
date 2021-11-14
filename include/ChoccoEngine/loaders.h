@@ -1,14 +1,16 @@
 #pragma once
 
 #ifndef ndebug
-#include <error.h>
+#include <ChoccoEngine/error.h>
 #endif
 
+#include <string>
+	
 #include <SDL.h>
 #include <SDL_image.h>
 #include <SDL_ttf.h>
 
-namespace ChoccoEngine {
+namespace chocco {
 	SDL_Texture* loadTexture(SDL_Renderer* renderer, std::string path);
 
 	TTF_Font* loadFont(std::string path, int size);

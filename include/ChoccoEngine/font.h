@@ -1,8 +1,8 @@
 #pragma once
 
+#ifndef ndebug
 #include <iostream>
-#include <memory>
-#include <map>
+#endif
 
 #include <Cmath.h>
 #include <loaders.h>
@@ -10,10 +10,9 @@
 #include <object.h>
 
 #include <SDL.h>
-#include <SDL_image.h>
 #include <SDL_ttf.h>
 
-namespace ChoccoEngine {
+namespace chocco {
 	struct Font : public Object {
 		std::string path, message;
 		int size;

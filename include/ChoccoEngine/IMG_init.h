@@ -1,11 +1,12 @@
 #pragma once
 
+#ifndef ndebug
+#include "error.h"
+#endif
+
 #include <SDL_image.h>
-#include <error.h>
 
-namespace ChoccoEngine {
-	void initIMG();
-
+namespace chocco {
 	void initIMGType(int flag);
 
 	// initialize all sorts of images

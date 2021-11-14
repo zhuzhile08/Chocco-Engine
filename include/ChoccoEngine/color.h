@@ -1,5 +1,5 @@
 #include <SDL.h>
 
-namespace ChoccoEngine {
+namespace chocco {
 	SDL_Color Color(int r, int g, int b, int a);
 }

@@ -31,10 +31,15 @@ namespace chocco {
 		~Sprite();
 		
 		void flip();
-		void initTexture(SDL_Renderer* renderer, std::string path);
-		void initAttributes(SDL_Rect* clip, SDL_Point rotationCenter);
+		void initSpriteTexture(SDL_Renderer* renderer, std::string path);
+		void initSpriteAttributes(SDL_Rect* clip, SDL_Point rotationCenter);
 
-		double get_width();
-		double get_height();
+		SDL_Texture* &getTexture = texture;
+		SDL_Rect* &getClip = clip;
+		SDL_Point &getRotationCenter = rotationCenter;
+		std::string &getPath = path;
+
+		double getWidth();
+		double getHeight();
 	};
 }

@@ -5,6 +5,7 @@ namespace chocco {
 
 	Sprite::~Sprite() {
 		SDL_DestroyTexture(texture);
+		texture = nullptr;
 		delete clip;
 	}
 
@@ -13,7 +14,17 @@ namespace chocco {
 		flipped * -1;
 	}
 
-	double Sprite::get_width() {
+	void Sprite::initSpriteTexture(SDL_Renderer* renderer, std::string path) {
+		this->path = path;
+		texture = loadTexture(renderer, this->path);
+	}
+
+	void Sprite::initSpriteAttributes(SDL_Rect* clip, SDL_Point rotationCenter) {
+		this->clip = clip;
+		this->rotationCenter = rotationCenter;
+	}
+
+	double Sprite::getWidth() {
 		int w;
 #ifndef ndebug
 		if (texture != nullptr) SDL_QueryTexture(texture, NULL, NULL, &w, NULL);
@@ -28,7 +39,7 @@ namespace chocco {
 		return double(w);
 	}
 
-	double Sprite::get_height() {
+	double Sprite::getHeight() {
 		int h;
 #ifndef ndebug
 		if (texture != nullptr) SDL_QueryTexture(texture, NULL, NULL, NULL, &h);

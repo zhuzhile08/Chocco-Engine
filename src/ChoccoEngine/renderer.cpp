@@ -96,4 +96,14 @@ namespace chocco {
         
         SDL_SetRenderDrawColor(renderer, last.r, last.g, last.b, last.a);
     }
+
+    void Renderer::drawSprite(Sprite sprite) {
+        SDL_FRect dst = {sprite.getPosition.x, sprite.getPosition.y, sprite.getWidth(), sprite.getHeight()};
+#ifndef ndebug
+        if (SDL_RenderCopyF(renderer, sprite.getTexture, NULL, &dst) != 0) SDLError("SDL draw texture (sprite) error");
+#endif
+#ifdef ndebug
+        SDL_RenderCopyF(renderer, sprite.getTexture, NULL, &dst);
+#endif
+    }
 }

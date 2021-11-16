@@ -5,6 +5,7 @@
 
 #ifndef ndebug
 #include <ChoccoEngine/error.h>
+#include <ChoccoEngine/sprite.h>
 #endif
 
 #include <Cmath.h>
@@ -33,5 +34,7 @@ namespace chocco {
 
         void drawRect(SDL_FRect rect, SDL_Color color, bool filled);
         void drawRect(SDL_FRect rect, SDL_Color color, double rotation, bool filled);
+
+        void drawSprite(Sprite sprite);
     };
 }

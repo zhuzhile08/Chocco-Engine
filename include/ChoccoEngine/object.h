@@ -16,12 +16,13 @@ namespace chocco {
         Object();
         Object(std::string name, Vector2 position, Vector2 scale, double rotation);
 
-        std::string get_name();
-
-        Vector2 getLocalPos();
         void translate(Vector2 vel);
         void rotate(double rot);
         void input();
         void update();
+
+        std::string& getName = name;
+        Vector2& getPosition = position;
+        Vector2& getScale = scale;
     };
 }

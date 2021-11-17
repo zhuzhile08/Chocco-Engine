@@ -19,9 +19,9 @@ namespace chocco {
 	// sprite initializers
 	// yes, I didn't put these in a constructor because I don't want to make 100 different overloads of the constructor, just a little different
 	// also, this keeps a line pretty short
-	void Sprite::initSpriteTexture(SDL_Renderer* renderer, std::string path) {
+	void Sprite::initSpriteTexture(Renderer renderer, std::string path) {
 		this->path = path;
-		texture = loadTexture(renderer, this->path);
+		texture = loadTexture(renderer.renderer, this->path);
 	}
 
 	void Sprite::initSpriteAttributes(SDL_Rect* clip, SDL_Point rotationCenter) {

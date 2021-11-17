@@ -1,13 +1,14 @@
 #pragma once
 
+#include <string>
 #include <SDL.h>
 #include <SDL_ttf.h>
 
-#include <Cmath.h>
-#include <loaders.h>
-#include <color.h>
-#include <Sprite.h>
-#include <string>
+#include <ChoccoEngine/Cmath.h>
+#include <ChoccoEngine/loaders.h>
+#include <ChoccoEngine/color.h>
+#include <ChoccoEngine/sprite.h>
+#include <ChoccoEngine/renderer.h>
 
 #ifndef ndebug
 #include <error.h>
@@ -45,9 +46,9 @@ namespace chocco {
 
 		void destroy();
 
-		void initFontSurface(SDL_Renderer* renderer, std::string path, SDL_Color color, int size, std::string message);
+		void initFontSurface(Renderer renderer, std::string path, SDL_Color color, int size, std::string message);
 		void determineFontStyle(bool style[4], int outline, bool hinting[3], bool renderStyle[2]);
-		void initFontTexture(SDL_Renderer* renderer);
+		void initFontTexture(Renderer renderer);
 		void initFontAttributes(Vector2 boundingBox);
 
 		std::string getMessage();

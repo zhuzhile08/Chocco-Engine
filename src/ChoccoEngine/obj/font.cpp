@@ -27,7 +27,7 @@ namespace chocco {
 	}
 
 	// font initializers
-	void Font::initFontSurface(SDL_Renderer* renderer, std::string path, SDL_Color color, int size, std::string message) {
+	void Font::initFontSurface(Renderer renderer, std::string path, SDL_Color color, int size, std::string message) {
 		this->path = path;
 		this->color = color;
 		this->message = message;
@@ -40,8 +40,8 @@ namespace chocco {
 	#endif
 	} 
 	
-	void Font::initFontTexture(SDL_Renderer* renderer) {
-		texture = SDL_CreateTextureFromSurface(renderer, baseSurface);
+	void Font::initFontTexture(Renderer renderer) {
+		texture = SDL_CreateTextureFromSurface(renderer.renderer, baseSurface);
 
 	#ifndef ndebug
 		if (texture == nullptr){

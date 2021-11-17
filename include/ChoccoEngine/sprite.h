@@ -1,11 +1,12 @@
 #pragma once
 
-#include <iostream>
+#include <string>
 #include <SDL.h>
 
 #include <ChoccoEngine/Cmath.h>
 #include <ChoccoEngine/object.h>
 #include <ChoccoEngine/loaders.h>
+#include <ChoccoEngine/renderer.h>
 
 #ifndef ndebug
 #include <ChoccoEngine/error.h>
@@ -33,7 +34,7 @@ namespace chocco {
 		virtual void destory();
 		
 		void flip();
-		void initSpriteTexture(SDL_Renderer* renderer, std::string path);
+		void initSpriteTexture(Renderer renderer, std::string path);
 		void initSpriteAttributes(SDL_Rect* clip, SDL_Point rotationCenter);
 
 		SDL_Texture* getTexture();

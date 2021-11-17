@@ -29,16 +29,18 @@ namespace chocco {
 		Sprite();
 		Sprite(std::string name, Vector2 position, Vector2 scale, double rotation);
 		~Sprite();
+
+		virtual void destory();
 		
 		void flip();
 		void initSpriteTexture(SDL_Renderer* renderer, std::string path);
 		void initSpriteAttributes(SDL_Rect* clip, SDL_Point rotationCenter);
 
-		SDL_Texture* &getTexture = texture;
-		SDL_Rect* &getClip = clip;
-		SDL_Point &getRotationCenter = rotationCenter;
-		std::string &getPath = path;
-
+		SDL_Texture* getTexture();
+		SDL_Rect* getClip();
+		SDL_Point getRotationCenter();
+		std::string getPath();
+		
 		double getWidth();
 		double getHeight();
 	};

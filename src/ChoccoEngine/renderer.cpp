@@ -1,14 +1,7 @@
 #include <ChoccoEngine/renderer.h>
 
-/**
- * Renderer Class
- * It's basicly a simpler version of the SDL renderer, because I simplyfied a lot of stuff
- * It contains / still in progress /
-**/
-
-
 namespace chocco {
-    // constructors and destructors
+// constructors and destructors
     Renderer::Renderer() : renderer(nullptr), flags(NULL) { }
 
     Renderer::Renderer(SDL_Window* window, int flags) : flags(flags) {
@@ -24,6 +17,11 @@ namespace chocco {
         delete renderer;
     }
 
+    void Renderer::destroy() {
+        delete renderer;
+    }
+
+// clear and present
     void Renderer::clear() {
         SDL_RenderClear(renderer);
     }
@@ -97,6 +95,7 @@ namespace chocco {
         SDL_SetRenderDrawColor(renderer, last.r, last.g, last.b, last.a);
     }
 
+// sprite drawing
     void Renderer::drawSprite(Sprite sprite) {
         SDL_FRect dst = {sprite.getPosition.x, sprite.getPosition.y, sprite.getWidth(), sprite.getHeight()};
 #ifndef ndebug

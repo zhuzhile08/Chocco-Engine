@@ -9,20 +9,21 @@ namespace chocco {
     protected:
         Vector2 position, scale;
         std::string name = "Object";
-        Object* parent = nullptr;
         int flipped = 1;
         double rotation = 0;
     public:
         Object();
         Object(std::string name, Vector2 position, Vector2 scale, double rotation);
 
-        void translate(Vector2 vel);
-        void rotate(double rot);
-        void input();
-        void update();
+        virtual void update();
 
-        std::string& getName = name;
-        Vector2& getPosition = position;
-        Vector2& getScale = scale;
+        std::string getName();
+        Vector2 getPosition();
+        Vector2 getScale();
+        double getRotation();
+
+        void resize(Vector2);
+        void translate(Vector2);
+        void rotate(double);
     };
 }

@@ -29,6 +29,8 @@ namespace chocco {
         void clear();
         void present();
 
+        void destroy();
+
         void drawPoint(Vector2 pos, SDL_Color color);
         void drawLine(Vector2 coord1, Vector2 coord2, SDL_Color color);
 

@@ -17,11 +17,9 @@
 **/
 
 namespace chocco {
-    class Renderer {
-    private:
+    struct Renderer {
         SDL_Renderer* renderer;
         int flags;
-    public:
         Renderer();
         Renderer(SDL_Window* window, int flags);
         ~Renderer();

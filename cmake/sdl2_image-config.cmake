@@ -1,4 +1,4 @@
-set(SDL2_IMAGE_INCLUDE_DIRS "${CMAKE_SOURCE_DIR}/include/")
+set(SDL2_IMAGE_INCLUDE_DIRS "${CMAKE_SOURCE_DIR}/include/SDL/")
 
 # Support both 32 and 64 bit builds
 if (${CMAKE_SIZEOF_VOID_P} MATCHES 8)

@@ -5,6 +5,7 @@ namespace chocco {
 	 * Fonts using SDL_TTF
 	 * they are just glorified sprites, nothing too interesting
 	**/
+	Font::Font() : Sprite() {}
 
 	Font::Font(std::string name, Vector2 position, Vector2 scale, double rotation) : Sprite(name, position, scale, rotation){  }
 
@@ -27,7 +28,7 @@ namespace chocco {
 	}
 
 	// font initializers
-	void Font::initFontSurface(Renderer renderer, std::string path, SDL_Color color, int size, std::string message) {
+	void Font::initFontSurface(SDL_Renderer* renderer, std::string path, SDL_Color color, int size, std::string message) {
 		this->path = path;
 		this->color = color;
 		this->message = message;
@@ -40,8 +41,8 @@ namespace chocco {
 	#endif
 	} 
 	
-	void Font::initFontTexture(Renderer renderer) {
-		texture = SDL_CreateTextureFromSurface(renderer.renderer, baseSurface);
+	void Font::initFontTexture(SDL_Renderer* renderer) {
+		texture = SDL_CreateTextureFromSurface(renderer, baseSurface);
 
 	#ifndef ndebug
 		if (texture == nullptr){

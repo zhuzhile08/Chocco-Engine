@@ -2,6 +2,8 @@
 
 namespace chocco {
     // Consturctor
+    Object::Object() {}
+
     Object::Object(std::string name, Vector2 position, Vector2 scale, double rotation) : position(position), scale(scale), rotation(rotation), name(name) { }
 
     // some getters and setters

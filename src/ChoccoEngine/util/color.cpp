@@ -1,6 +1,6 @@
 #include <ChoccoEngine/color.h>
 
-namespace ChoccoEngine {
+namespace chocco {
 	/**
 	 * Since I have no idea how SDL_Color works, I just created this small thing that creates a color for me
 	 * Has 4 values for the colors (a is for alpha)

@@ -1,6 +1,6 @@
 #include <ChoccoEngine/error.h>
 
-namespace ChoccoEngine {
+namespace chocco {
 	void SDLError(std::string message) {
 		std::cout << message << ": " << SDL_GetError() << std::endl;
 	}

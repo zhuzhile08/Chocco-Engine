@@ -9,15 +9,6 @@ namespace chocco {
 
 	Font::Font(std::string name, Vector2 position, Vector2 scale, double rotation) : Sprite(name, position, scale, rotation){  }
 
-	Font::~Font() {
-		SDL_DestroyTexture(texture);
-		texture = nullptr;
-		SDL_FreeSurface(baseSurface);
-		baseSurface = nullptr;
-		TTF_CloseFont(font);
-		delete clip;
-	}
-
 	void Font::destroy() {
 		SDL_DestroyTexture(texture);
 		texture = nullptr;

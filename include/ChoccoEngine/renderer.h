@@ -5,10 +5,10 @@
 
 #ifndef ndebug
 #include <ChoccoEngine/error.h>
-#include <ChoccoEngine/sprite.h>
 #endif
 
-#include <Cmath.h>
+#include <ChoccoEngine/sprite.h>
+#include <ChoccoEngine/Cmath.h>
 
 /**
  * Renderer class
@@ -20,9 +20,10 @@ namespace chocco {
     struct Renderer {
         SDL_Renderer* renderer;
         int flags;
+        
         Renderer();
         Renderer(SDL_Window* window, int flags);
-        ~Renderer();
+        // ~Renderer();
 
         void clear();
         void present();

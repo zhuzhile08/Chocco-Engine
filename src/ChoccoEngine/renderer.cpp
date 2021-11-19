@@ -13,12 +13,8 @@ namespace chocco {
 #endif
     }
 
-    Renderer::~Renderer() {
-        delete renderer;
-    }
-
     void Renderer::destroy() {
-        delete renderer;
+        SDL_DestroyRenderer(renderer);
     }
 
 // clear and present

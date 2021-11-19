@@ -6,7 +6,6 @@
 #include <ChoccoEngine/Cmath.h>
 #include <ChoccoEngine/object.h>
 #include <ChoccoEngine/loaders.h>
-#include <ChoccoEngine/renderer.h>
 
 #ifndef ndebug
 #include <ChoccoEngine/error.h>
@@ -29,12 +28,12 @@ namespace chocco {
 	public:
 		Sprite();
 		Sprite(std::string name, Vector2 position, Vector2 scale, double rotation);
-		~Sprite();
+		//~Sprite();
 
 		virtual void destory();
 		
 		void flip();
-		void initSpriteTexture(Renderer renderer, std::string path);
+		void initSpriteTexture(SDL_Renderer* renderer, std::string path);
 		void initSpriteAttributes(SDL_Rect* clip, SDL_Point rotationCenter);
 
 		SDL_Texture* getTexture();

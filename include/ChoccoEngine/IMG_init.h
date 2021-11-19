@@ -5,6 +5,7 @@
 #endif
 
 #include <SDL_image.h>
+#include <assert.h>
 
 namespace chocco {
 	void initIMGType(int flag);

@@ -3,7 +3,7 @@
 // initialize SDL_image
 
 namespace chocco {
-	void initIMGtype(int flag) {
+	void initIMGType(int flag) {
 #ifndef ndebug
 		int initted = IMG_Init(flag);
 

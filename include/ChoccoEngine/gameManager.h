@@ -6,21 +6,19 @@
 
 #pragma once
 
-#include <iostream>
 #include <memory>
 
-#include "util/gameVar.h"
-#include "obj/sprite.h"
-#include "obj/font.h"
-#include "obj/spriteGroup.h"
-#include "util/loaders.h"
-#include "util/math.h"
+#include <ChoccoEngine/gameVar.h>
+#include <ChoccoEngine/sprite.h>
+#include <ChoccoEngine/renderer.h>
+#include <ChoccoEngine/error.h>
+#include <iostream>
 
 #include <SDL.h>
 #include <SDL_image.h>
 #include <SDL_ttf.h>
 
-namespace ChoccoEngine {
+namespace chocco {
 	class GameManager
 	{
 	protected:
@@ -28,21 +26,13 @@ namespace ChoccoEngine {
 		SDL_Event event;
 
 		SDL_Window* window;
-		SDL_Renderer* renderer;
+		Renderer renderer;
 
 		void events();
-
-		void drawSprite(std::shared_ptr<Sprite> sprite);
-		void drawTexture(SDL_Texture* texture, int x, int y);
-		void drawFont(std::shared_ptr<Font> font);
 		
-		void drawAllSprites(std::shared_ptr<SpriteGroup> group);
+		// void drawAllSprites(std::shared_ptr<SpriteGroup> group);
 
-		std::shared_ptr<Font> helloLmao;
-
-		std::shared_ptr<Sprite> test;
-
-		SDL_Texture* texture;
+		Sprite test;
 
 	public:
 		bool running;

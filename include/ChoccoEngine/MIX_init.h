@@ -5,6 +5,7 @@
 #endif
 
 #include <SDL_mixer.h>
+#include <assert.h>
 
 namespace chocco {
 	void initMIX();

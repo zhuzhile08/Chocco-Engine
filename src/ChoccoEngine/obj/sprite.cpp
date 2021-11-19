@@ -6,12 +6,6 @@ namespace chocco {
 
 	Sprite::Sprite(std::string name, Vector2 position, Vector2 scale, double rotation) : Object(name, position, scale, rotation) {}
 
-	Sprite::~Sprite() {
-		SDL_DestroyTexture(texture);
-		texture = nullptr;
-		delete clip;
-	}
-
 	void Sprite::destory() {
 		SDL_DestroyTexture(texture);
 		texture = nullptr;
@@ -34,7 +28,7 @@ namespace chocco {
 	// some functions
 	void Sprite::flip() {
 		scale = {scale.x * -1, scale.y};
-		flipped * -1.0;
+		flipped -= 0;
 	}
 
 	// getters
@@ -58,9 +52,8 @@ namespace chocco {
 	double Sprite::getWidth() {
 		int w;
 #ifndef ndebug
-		if (texture != nullptr) SDL_QueryTexture(texture, NULL, NULL, &w, NULL);
-		else {
-			IMGError("Sprite is a null pointer error");
+		if (SDL_QueryTexture(texture, NULL, NULL, &w, NULL)) {
+			SDLError("wot");
 			return 0;
 		}
 #endif
@@ -73,9 +66,8 @@ namespace chocco {
 	double Sprite::getHeight() {
 		int h;
 #ifndef ndebug
-		if (texture != nullptr) SDL_QueryTexture(texture, NULL, NULL, NULL, &h);
-		else {
-			IMGError("Sprite is a null pointer error");
+		if (SDL_QueryTexture(texture, NULL, NULL, NULL, &h)) {
+			SDLError("wot");
 			return 0;
 		}
 #endif

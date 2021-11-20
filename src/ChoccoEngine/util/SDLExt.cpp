@@ -1,9 +1,8 @@
-#include <ChoccoEngine/color.h>
+#include <ChoccoEngine/SDLExt.h>
 
 namespace chocco {
 	/**
-	 * Since I have no idea how SDL_Color works, I just created this small thing that creates a color for me
-	 * Has 4 values for the colors (a is for alpha)
+	 * An extension for SDL_Color
 	**/
 
 	SDL_Color Color(int r, int g, int b, int a) {
@@ -13,5 +12,14 @@ namespace chocco {
 		color.b = b;
 		color.a = a;
 		return color;
+	}
+
+	/**
+	 * An extension for the SDL_Point (FPoint)
+	**/
+
+	SDL_FPoint Point(double x, double y) {
+		SDL_FPoint point = {float(x), float(y)};
+		return point;
 	}
 }

@@ -7,7 +7,7 @@
 
 #include <ChoccoEngine/Cmath.h>
 #include <ChoccoEngine/loaders.h>
-#include <ChoccoEngine/color.h>
+#include <ChoccoEngine/SDLExt.h>
 #include <ChoccoEngine/sprite.h>
 
 #ifndef ndebug
@@ -42,7 +42,6 @@ namespace chocco {
 	public:
 		Font();
 		Font(std::string name, Vector2 position, Vector2 scale, double rotation);
-		//~Font();
 
 		void destroy();
 

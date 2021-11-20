@@ -10,8 +10,10 @@
 
 #include <ChoccoEngine/gameVar.h>
 #include <ChoccoEngine/sprite.h>
+#include <ChoccoEngine/font.h>
 #include <ChoccoEngine/renderer.h>
 #include <ChoccoEngine/error.h>
+#include <ChoccoEngine/SDLExt.h>
 #include <iostream>
 
 #include <SDL.h>
@@ -33,6 +35,7 @@ namespace chocco {
 		// void drawAllSprites(std::shared_ptr<SpriteGroup> group);
 
 		Sprite test;
+		Font text;
 
 	public:
 		bool running;

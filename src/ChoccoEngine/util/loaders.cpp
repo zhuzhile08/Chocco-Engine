@@ -10,10 +10,10 @@ namespace chocco {
 		SDL_Texture* texture = IMG_LoadTexture(renderer, path.c_str());
 
 #ifndef ndebug
-		if (texture == nullptr)
+		if (texture == nullptr) {
 			SDLError("SDL load texture error");
-
-		return nullptr;
+			return nullptr;
+		}
 #endif
 		return texture;
 	}

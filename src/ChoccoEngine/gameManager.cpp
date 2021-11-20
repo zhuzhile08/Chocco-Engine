@@ -27,8 +27,13 @@ namespace chocco {
 
 		running = true;
 
-		test = Sprite("bob", {100, 100}, {1, 1}, 0);
+		test = Sprite("bob", {100, 100}, {1, 1}, 16);
 		test.initSpriteTexture(renderer.renderer, "assets/img/TextureError.png");
+		test.initSpriteAttributes(nullptr, Point(test.getWidth()/2, test.getHeight()/2));
+
+		text = Font("bob", {69, 420}, {1, 1}, 47);
+		text.initFontSurface(renderer.renderer, "assets/ttf/sample.ttf", Color(255, 255, 255, 255), 16, "sheeesh");
+		text.initFontTexture(renderer.renderer);
 	}
 
 	GameManager::~GameManager() {
@@ -53,9 +58,8 @@ namespace chocco {
 		
 			renderer.clear();
 
-			std::cout << test.getWidth() << std::endl;
-
 			renderer.drawSprite(test);
+			renderer.drawSprite(text);
 
 			renderer.present();
 		}

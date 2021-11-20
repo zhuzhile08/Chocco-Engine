@@ -37,7 +37,7 @@ src/ChoccoENgine/init/initALL.cpp
 src/ChoccoEngine/util/error.cpp 
 src/ChoccoEngine/util/loaders.cpp 
 src/ChoccoEngine/util/Cmath.cpp 
-src/ChoccoEngine/util/color.cpp 
+src/ChoccoEngine/util/SDLExt.cpp 
 src/ChoccoEngine/obj/font.cpp 
 src/ChoccoEngine/obj/hitbox.cpp 
 src/ChoccoEngine/obj/object.cpp 

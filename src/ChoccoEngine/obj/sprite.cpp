@@ -20,7 +20,7 @@ namespace chocco {
 		texture = loadTexture(renderer, this->path);
 	}
 
-	void Sprite::initSpriteAttributes(SDL_Rect* clip, SDL_Point rotationCenter) {
+	void Sprite::initSpriteAttributes(SDL_Rect* clip, SDL_FPoint rotationCenter) {
 		this->clip = clip;
 		this->rotationCenter = rotationCenter;
 	}
@@ -40,7 +40,7 @@ namespace chocco {
 		return clip;
 	}
 
-	SDL_Point Sprite::getRotationCenter() {
+	SDL_FPoint Sprite::getRotationCenter() {
 		return rotationCenter;
 	}
 

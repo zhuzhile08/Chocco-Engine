@@ -24,21 +24,20 @@ namespace chocco {
 		std::string path = "assets/img/textureError.png";
 		SDL_Texture* texture = nullptr;
 		SDL_Rect* clip = nullptr;
-		SDL_Point rotationCenter = {0, 0};
+		SDL_FPoint rotationCenter = {0, 0};
 	public:
 		Sprite();
 		Sprite(std::string name, Vector2 position, Vector2 scale, double rotation);
-		//~Sprite();
 
 		virtual void destory();
 		
 		void flip();
 		void initSpriteTexture(SDL_Renderer* renderer, std::string path);
-		void initSpriteAttributes(SDL_Rect* clip, SDL_Point rotationCenter);
+		void initSpriteAttributes(SDL_Rect* clip, SDL_FPoint rotationCenter);
 
 		SDL_Texture* getTexture();
 		SDL_Rect* getClip();
-		SDL_Point getRotationCenter();
+		SDL_FPoint getRotationCenter();
 		std::string getPath();
 		
 		double getWidth();

@@ -49,7 +49,7 @@ namespace chocco {
 		void initFontSurface(SDL_Renderer* renderer, std::string path, SDL_Color color, int size, std::string message);
 		void determineFontStyle(bool style[4], int outline, bool hinting[3], bool renderStyle[2]);
 		void initFontTexture(SDL_Renderer* renderer);
-		void initFontAttributes(Vector2 boundingBox);
+		void initFontAttributes(Vector2 boundingBox, SDL_Color shadingColor);
 
 		std::string getMessage();
 		Vector2 getBoundingBox();

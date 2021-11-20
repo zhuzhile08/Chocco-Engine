@@ -63,6 +63,12 @@ namespace chocco {
 		if (!renderStyle[0] && !renderStyle[1]) baseSurface = TTF_RenderText_Solid(font, message.c_str(), color);
 	}
 
+	// initialize all font variables
+	void Font::initFontAttributes(Vector2 boundingBox, SDL_Color shadingColor) {
+		this->boundingBox = boundingBox;
+		this-> shadingColor = shadingColor;
+	}
+
 	std::string Font::getMessage() {
 		return message;
 	}

@@ -1,5 +1,6 @@
 #pragma once
 
+#include <map>
 #include <SDL.h>
 #include <SDL_image.h>
 
@@ -9,6 +10,7 @@
 
 #include <ChoccoEngine/sprite.h>
 #include <ChoccoEngine/Cmath.h>
+#include <ChoccoEngine/spriteGroup.h>
 
 /**
  * Renderer class
@@ -37,5 +39,6 @@ namespace chocco {
         void drawRect(SDL_FRect rect, SDL_Color color, double rotation, bool filled);
 
         void drawSprite(Sprite sprite);
+        void drawSpriteGroup(SpriteGroup group);
     };
 }

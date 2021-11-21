@@ -2,8 +2,17 @@
 #include <SDL.h>
 #include <cmath>
 
+/**
+ * math file
+ * some definitions, math operations and a 2d vector struct
+ * there is also a function calculating the FPS and some sigmoid stuff for animations
+**/
+
 namespace chocco {
-#define EULER 2.7182818284590452353602874713527
+#define EULER 2.718281828459045
+#define PI 3.141592653589793
+#define GOLDENR 1.618033988749894
+
 	typedef uint8_t uint8;
 	typedef uint16_t uint16;
 	typedef uint32_t uint32;
@@ -36,9 +45,7 @@ namespace chocco {
 	// math operations
 	double fastSqrt(double a);
 	double pythagoras(Vector2 a, Vector2 b);
-
-	double deltaTime();
+	double sigmoidMod(double t, double maxR);
 
 	double FPS();
-	double sigmoidMod(double t, double maxR);
 }

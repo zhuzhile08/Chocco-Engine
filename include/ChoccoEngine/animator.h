@@ -1,14 +1,10 @@
 #pragma once
 
-#ifndef ndebug
-#include <iostream>
-#endif
-
+#include <string>
 #include <map>
+#include <SDL.h>
 
 #include <Cmath.h>
-
-#include <SDL.h>
 
 /**
  * Classes for animations
@@ -25,14 +21,19 @@ namespace chocco {
     protected:
         bool loops;
         bool playing;
-        int length;
-    public:
-        std::map <std::string, int> animation;
         std::string name;
+    public:
+        std::map <int, int> frames;
         Animation();
+        Animation(std::string name);
+
         void addFrame(int number, int timeToNext);
-        void play();
         void stop();
+        virtual void play();
+
+        std::string getName();
+        bool getPlaying();
+        void setPlaying(bool playing);
     };
 
     class Animator {
@@ -42,5 +43,6 @@ namespace chocco {
         Animator();
         void addAnimation(Animation animation);
         void playAnimation(std::string animationName);
+        void stopAnimation(std::string animationName);
     };
 }

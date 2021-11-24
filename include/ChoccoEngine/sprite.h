@@ -21,9 +21,9 @@
 namespace chocco {
     class Sprite : public Object {
 	protected:
-		std::string path = "assets/img/textureError.png";
+		std::string path = "data/img/textureError.png";
 		SDL_Texture* texture = nullptr;
-		SDL_Rect* clip = nullptr;
+		SDL_Rect* clip = NULL;
 		SDL_FPoint rotationCenter = {0, 0};
 	public:
 		Sprite();

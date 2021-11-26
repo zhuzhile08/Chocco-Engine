@@ -1,18 +1,43 @@
 #include <ChoccoEngine/tilemap.h>
 
 namespace chocco {
-    // constructor
-    Tilemap::Tilemap(SDL_Renderer* renderer, std::string path, int clipSize, std::string name) : clipSize(clipSize), name(name) {
-        baseTexture = loadTexture(renderer, path);
-    }
-
+// functions
     void Tilemap::destroy() {
         SDL_DestroyTexture(texture);
         SDL_DestroyTexture(baseTexture);
     }
 
-    void Tilemap::loadTileMap(std::string path) {
+// function to load a specific line in a file
+    std::string Tilemap::loadFile(std::string localPath, int row) {
+        int i = 1;
+        std::ofstream file;
+        std::string out;
+        file.open("data/tiles/" + localPath, std::fstream::out);
+#ifndef ndebug
+        if (file.is_open()) {
+            while(i <= row) {
+                file << out;
+                i++;
+            }
+        } else std::cout << "Tilemap open file error with file " << "data/tiles/" + localPath << std::endl;
+#endif
+#ifndef debug
+        while(i <= row) {
+            file << out;
+            i++;
+        }
+#endif
+        file.close();
+        return out;
+    }
 
+// this is basicly the constructor
+    void Tilemap::loadTileMap(std::string path, SDL_Renderer* renderer) {   // this function HAS to be called before anything else and before putting the tilemap into a group
+        name = loadFile("tile.ctm", 1);
+        baseTexture = loadTexture(renderer, loadFile("tile.ctm", 2));
+        width = stoi(loadFile("tile.ctm", 3));
+        height = stoi(loadFile("tile.ctm", 4));
+        clipSize = stoi(loadFile("tile.ctm", 5));
     }
 
     void Tilemap::createTiles() {

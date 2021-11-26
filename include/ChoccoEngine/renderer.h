@@ -10,7 +10,7 @@
 
 #include <ChoccoEngine/sprite.h>
 #include <ChoccoEngine/Cmath.h>
-#include <ChoccoEngine/spriteGroup.h>
+#include <ChoccoEngine/group.h>
 
 /**
  * Renderer class

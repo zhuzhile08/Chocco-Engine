@@ -104,7 +104,7 @@ namespace chocco {
     }
 
     void Renderer::drawSpriteGroup(SpriteGroup spriteGroup) {
-        std::map group = spriteGroup.getGroup();
+        std::map <std::string, Sprite> group = spriteGroup.getGroup();
         for (std::pair<std::string, Sprite> pair : group) {
 			drawSprite(pair.second);
 		} 

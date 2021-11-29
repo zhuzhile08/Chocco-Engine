@@ -104,9 +104,26 @@ namespace chocco {
     }
 
     void Renderer::drawSpriteGroup(SpriteGroup spriteGroup) {
-        std::map <std::string, Sprite> group = spriteGroup.getGroup();
-        for (std::pair<std::string, Sprite> pair : group) {
+        for (std::pair<std::string, Sprite> pair : spriteGroup.group) {
 			drawSprite(pair.second);
+		} 
+    }
+
+// tilemap drawing
+    void Renderer::drawTilemap(Tilemap tilemap) {
+        SDL_FRect dst = {0, 0, tilemap.getSize.x * tilemap.getClipSize, tilemap.getSize.y * tilemap.getClipSize};
+#ifndef ndebug
+        if (SDL_RenderCopyF(renderer, tilemap.getTexture(), NULL, &dst) != 0) SDLError("SDL draw texture (sprite) error");
+#endif
+#ifdef ndebug
+        SDL_RenderCopyF(renderer, tilemap.getTexture(), tilemap.getClip(), &dst)
+#endif
+
+    }
+
+    void Renderer::drawTileGroup(TileGroup group) {
+        for (std::pair<std::string, Tilemap> pair : group.group) {
+			drawTilemap(pair.second);
 		} 
     }
 }

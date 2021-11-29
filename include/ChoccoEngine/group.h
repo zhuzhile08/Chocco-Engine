@@ -1,10 +1,15 @@
 #pragma once
 
+#ifndef ndebug
+#include <iostream>
+#endif
+
 #include <string>
 #include <map>
 
 #include <ChoccoEngine/sprite.h>
 #include <ChoccoEngine/object.h>
+#include <ChoccoEngine/tilemap.h>
 
 /**
  * Sprite/Object Groups
@@ -15,14 +20,12 @@
 
 namespace chocco {
     class SpriteGroup {
-	protected:
-		std::map <std::string, Sprite> group;
 	public:
+		std::map <std::string, Sprite> group;
 		SpriteGroup();
-		void add(Sprite obj);
+		void add(Sprite sprite);
 		void remove(std::string name);
 		void update();
-		std::map <std::string, Sprite> getGroup();
 	};
 
 	class ObjGroup {
@@ -31,5 +34,13 @@ namespace chocco {
 		ObjGroup();
 		void add(Object obj);
 		void remove(std::string name, int check);
+	};
+
+	class TileGroup {
+	public:
+		std::map <std::string, Tilemap> group;
+		TileGroup();
+		void add(Tilemap tile);
+		void remove(std::string name);
 	};
 }

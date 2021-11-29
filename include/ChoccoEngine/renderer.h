@@ -9,6 +9,7 @@
 #endif
 
 #include <ChoccoEngine/sprite.h>
+#include <ChoccoEngine/tilemap.h>
 #include <ChoccoEngine/Cmath.h>
 #include <ChoccoEngine/group.h>
 
@@ -40,5 +41,8 @@ namespace chocco {
 
         void drawSprite(Sprite sprite);
         void drawSpriteGroup(SpriteGroup group);
+
+        void drawTilemap(Tilemap tilemap);
+        void drawTileGroup(TileGroup group);
     };
 }

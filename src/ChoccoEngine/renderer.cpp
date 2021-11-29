@@ -111,7 +111,7 @@ namespace chocco {
 
 // tilemap drawing
     void Renderer::drawTilemap(Tilemap tilemap) {
-        SDL_FRect dst = {0, 0, tilemap.getSize.x * tilemap.getClipSize, tilemap.getSize.y * tilemap.getClipSize};
+        SDL_FRect dst = {0, 0, tilemap.getSize().x * tilemap.getClipSize(), tilemap.getSize().y * tilemap.getClipSize()};
 #ifndef ndebug
         if (SDL_RenderCopyF(renderer, tilemap.getTexture(), NULL, &dst) != 0) SDLError("SDL draw texture (sprite) error");
 #endif

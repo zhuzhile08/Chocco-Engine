@@ -35,12 +35,30 @@ namespace chocco {
     void Tilemap::loadTileMap(std::string path, SDL_Renderer* renderer) {   // this function HAS to be called before anything else and before putting the tilemap into a group
         name = loadFile("tile.ctm", 1);
         baseTexture = loadTexture(renderer, loadFile("tile.ctm", 2));
-        width = stoi(loadFile("tile.ctm", 3));
-        height = stoi(loadFile("tile.ctm", 4));
+        size.x = stoi(loadFile("tile.ctm", 3));
+        size.y = stoi(loadFile("tile.ctm", 4));
         clipSize = stoi(loadFile("tile.ctm", 5));
     }
 
     void Tilemap::createTiles() {
 
     }
+
+// getters
+    std::string Tilemap::getName() {
+        return name;
+    }
+
+    SDL_Texture* Tilemap::getTexture() {
+        return texture;
+    }
+    
+    Vector2 Tilemap::getSize() {
+        return size;
+    }
+    
+    int Tilemap::getClipSize() {
+        return clipSize;
+    }
+    
 }

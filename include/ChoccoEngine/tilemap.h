@@ -26,10 +26,11 @@ namespace chocco {
     protected:
         SDL_Texture* baseTexture = nullptr, *texture = nullptr;
         std::vector <SDL_Rect> tiles;
-        std::vector <std::vector <std::string>> tileData;
+        std::vector <std::vector <int>> tileData;
         std::string name = "tilemap";
 
-        int clipSize, height, width;
+        int clipSize;
+        Vector2 size = {0, 0};
 
         std::string loadFile(std::string path, int row);
     public:
@@ -41,5 +42,7 @@ namespace chocco {
 
         std::string getName();
         SDL_Texture* getTexture();
+        Vector2 getSize();
+        int getClipSize();
     };
 }

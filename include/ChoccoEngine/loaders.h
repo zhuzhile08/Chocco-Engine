@@ -17,4 +17,8 @@ namespace chocco {
 	SDL_Texture* loadTexture(SDL_Renderer* renderer, std::string path);
 
 	TTF_Font* loadFont(std::string path, int size);
+
+	Mix_Chunk* loadSound(std::string path);
+
+	Mix_Music* loadMusic(std::string path);
 }

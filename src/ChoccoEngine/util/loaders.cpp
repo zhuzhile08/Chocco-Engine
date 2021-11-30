@@ -35,4 +35,26 @@ namespace chocco {
 #endif
 		return font;
 	}
+
+	Mix_Chunk* loadSound(std::string path) {
+		Mix_Chunk* sound = Mix_LoadWAV(path.c_str());
+#ifndef ndebug
+		if (sound == nullptr) {
+			MIXError("Load Sound error");
+			return nullptr;
+		}
+#endif
+		return sound;
+	}
+
+	Mix_Music* loadMusic(std::string path) {
+		Mix_Music* music = Mix_LoadMUS(path.c_str());
+#ifndef ndebug
+		if (music == nullptr) {
+			MIXError("Load Music error");
+			return nullptr;
+		}
+#endif
+		return music;
+	}
 }

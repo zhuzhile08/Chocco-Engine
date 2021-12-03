@@ -1,11 +1,12 @@
 #pragma once
 
 #include <string>
+#include <noud.h>
 
 #include <ChoccoEngine/Cmath.h>
 
 namespace chocco {
-    class Object {
+    class Object : noud::Node {
     protected:
         Vector2 position, scale;
         std::string name = "Object";

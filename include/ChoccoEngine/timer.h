@@ -1,10 +1,12 @@
 #pragma once
+
 #include <SDL.h>
+#include <noud.h>
 
 // a pretty simple timer, nothing special
 
 namespace chocco {
-    class Timer {
+    class Timer : noud::Node {
     protected:
         bool stopped = true;
         bool repeat = false;

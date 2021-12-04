@@ -6,6 +6,7 @@
 
 #include <string>
 #include <map>
+#include <noud.h>
 
 #include <ChoccoEngine/sprite.h>
 #include <ChoccoEngine/object.h>
@@ -19,7 +20,7 @@
 **/
 
 namespace chocco {
-    class SpriteGroup {
+    class SpriteGroup : noud::Node {
 	public:
 		std::map <std::string, Sprite> group;
 		SpriteGroup();
@@ -28,7 +29,7 @@ namespace chocco {
 		void update();
 	};
 
-	class ObjGroup {
+	class ObjGroup : noud::Node {
 	public:
 		std::map <std::string, Object> group;
 		ObjGroup();
@@ -36,7 +37,7 @@ namespace chocco {
 		void remove(std::string name, int check);
 	};
 
-	class TileGroup {
+	class TileGroup : noud::Node {
 	public:
 		std::map <std::string, Tilemap> group;
 		TileGroup();

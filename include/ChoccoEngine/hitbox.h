@@ -1,11 +1,13 @@
 #pragma once
 
-#include "Cmath.h"
+#include <noud.h>
+
+#include <ChoccoEngine/Cmath.h>
 
 // 3 types of basic hitboxes
 
 namespace chocco {
-	class PolygonHitbox {
+	class PolygonHitbox : noud::Node {
 	private:
 		Vector2 a, b, c, position;
 	public:
@@ -15,7 +17,7 @@ namespace chocco {
 		void move(Vector2 destPos);
 	};
 
-	class RectHitbox {
+	class RectHitbox : noud::Node {
 	private:
 		Vector2 a, b, c, d, position;
 	public:
@@ -25,7 +27,7 @@ namespace chocco {
 		void move(Vector2 destPos);
 	};
 
-	class CircleHitbox {
+	class CircleHitbox : noud::Node {
 	private:
 		double radius;
 		Vector2 position;

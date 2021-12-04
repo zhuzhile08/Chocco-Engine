@@ -7,6 +7,7 @@
 #include <vector>
 #include <fstream>
 #include <SDL.h>
+#include <noud.h>
 
 #include <ChoccoEngine/Cmath.h>
 #include <ChoccoEngine/loaders.h>
@@ -22,7 +23,7 @@
  **/
 
 namespace chocco {
-    class Tilemap {
+    class Tilemap : noud::Node {
     protected:
         SDL_Texture* baseTexture = nullptr, *texture = nullptr;
         std::vector <SDL_Rect> tiles;

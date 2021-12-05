@@ -50,7 +50,7 @@ namespace chocco {
         bool playing;
         bool paused;
 
-        int loops;
+        int loops = 1;
 
         std::string path;
         Mix_Music* music;
@@ -58,13 +58,24 @@ namespace chocco {
         int channel = 8;
     public:
         Music();
+        Music(std::string path, int loops);
+        void destroy();
 
+        virtual void play();
+        virtual void play(int time);
+        void pause();
+        void stop();
+        void stop(int time);
     };
 
     class DstMusic : Music {
     protected:
         Vector2 position;
     public:
+        DstMusic();
+        DstMusic(std::string path, int loops);
         void setPosition(Vector2 position);
+        virtual void play(Object dst);
+        virtual void play(int time, Object dst);
     };
 }

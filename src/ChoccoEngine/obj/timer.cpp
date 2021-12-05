@@ -42,5 +42,8 @@ namespace chocco {
     void Timer::setRepeat(bool repeat) {
         this->repeat = repeat;
     }
-    
+
+    std::string Timer::getType() {
+        return type;
+    }
 }

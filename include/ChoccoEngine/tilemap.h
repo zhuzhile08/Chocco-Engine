@@ -29,6 +29,7 @@ namespace chocco {
         std::vector <SDL_Rect> tiles;
         std::vector <std::vector <int>> tileData;
         std::string name = "tilemap";
+        std::string type = "Tilemap";
 
         int clipSize;
         Vector2 size = {0, 0};

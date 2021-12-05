@@ -3,6 +3,7 @@
 #include <string>
 #include <map>
 #include <SDL.h>
+#include <noud.h>
 
 #include <Cmath.h>
 
@@ -36,13 +37,16 @@ namespace chocco {
         void setPlaying(bool playing);
     };
 
-    class Animator {
+    class Animator : noud::Node {
     protected:
+        std::string type = "Animator";
         std::map <std::string, Animation> animations;
     public:
         Animator();
         void addAnimation(Animation animation);
         void playAnimation(std::string animationName);
         void stopAnimation(std::string animationName);
+
+        std::string getType();
     };
 }

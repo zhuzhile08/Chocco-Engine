@@ -84,5 +84,4 @@ namespace chocco {
 	SDL_Color Font::getShadingColor() {
 		return shadingColor;
 	}
-
 }

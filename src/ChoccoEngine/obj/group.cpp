@@ -24,6 +24,7 @@ namespace chocco {
 			pair.second.update();
 		}
 	}
+	
 
 	// functions for the ObjGroup
 	void ObjGroup::add(Object obj) {

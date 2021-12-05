@@ -40,4 +40,8 @@ namespace chocco {
         Animation animation = animations.find(animationName)->second;
         animation.setPlaying(false);
     } 
+
+    std::string Animator::getType() {
+        return type;
+    }
 }

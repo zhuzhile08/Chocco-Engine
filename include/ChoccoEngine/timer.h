@@ -1,6 +1,7 @@
 #pragma once
 
 #include <SDL.h>
+#include <string>
 #include <noud.h>
 
 // a pretty simple timer, nothing special
@@ -8,6 +9,8 @@
 namespace chocco {
     class Timer : noud::Node {
     protected:
+        std::string name = "timer";
+        std::string type = "Timer";
         bool stopped = true;
         bool repeat = false;
         int waitTime = 0;
@@ -18,6 +21,7 @@ namespace chocco {
         void start();
         void stop();
 
+        std::string getType();
         int getWaitTime();
         bool getRepeat();
 

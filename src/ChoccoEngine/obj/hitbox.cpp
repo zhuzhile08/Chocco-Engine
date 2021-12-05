@@ -31,6 +31,10 @@ namespace chocco
 		position = destPos;
 	}
 
+	std::string PolygonHitbox::getType() {
+        return type;
+    }
+
 	/**
 	* Rectangle Hitbox consists of 4 points. defined are only the bottom left and the top right.
 	* the definable edges HAVE TO be defined in the order bottom left and fop right.
@@ -57,6 +61,10 @@ namespace chocco
 		position = destPos;
 	}
 
+	std::string RectHitbox::getType() {
+        return type;
+    }
+
 	/**
 	* Circle colliders. The only thing you have to define here is the radius. That's all
 	* The simplest form of colliders. it's very quick and efficient, perfect for sprites.
@@ -72,4 +80,8 @@ namespace chocco
 	void CircleHitbox::move(Vector2 destPos) {
 		position = destPos;
 	}
+
+	std::string CircleHitbox::getType() {
+        return type;
+    }
 }

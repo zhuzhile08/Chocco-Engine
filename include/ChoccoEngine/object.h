@@ -10,6 +10,7 @@ namespace chocco {
     protected:
         Vector2 position, scale;
         std::string name = "Object";
+        std::string type = "Object";
         int flipped = 1;
         double rotation = 0;
     public:
@@ -19,6 +20,7 @@ namespace chocco {
         virtual void update();
 
         std::string getName();
+        std::string getType();
         Vector2 getPosition();
         Vector2 getScale();
         double getRotation();

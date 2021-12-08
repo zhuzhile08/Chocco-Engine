@@ -2,7 +2,7 @@
 
 namespace chocco {
 // constructors and "destructors" for Sound Effects without distance calculation
-    SFX::SFX(std::string path, int channel, int loops) : channel(channel), loops(loops) {
+    SFX::SFX(std::string path, int channel, int loops, std::string name) : channel(channel), loops(loops), Node(nullptr, name) {
         sound = loadSound(path);
     }
 
@@ -22,9 +22,8 @@ namespace chocco {
 #endif
     }
 
-
 // constructors and "destructors" for Sound Effects with distance calculation
-    DstSFX::DstSFX(std::string path, int channel, int loops) : SFX(path, channel, loops) { }
+    DstSFX::DstSFX(std::string path, int channel, int loops, std::string name) : SFX(path, channel, loops, name) { }
 
 // functions for Sound Effects with distance calculation
     void DstSFX::play(Object dest) {
@@ -46,7 +45,7 @@ namespace chocco {
 
 
 // constructors and "destructors" for Music without distance calculation
-    Music::Music(std::string path, int loops) : loops(loops) {
+    Music::Music(std::string path, int loops, std::string name) : loops(loops), Node(nullptr, name) {
         music = loadMusic(path);
     }
 
@@ -112,7 +111,7 @@ namespace chocco {
     }
 
 // constructors and "destructors" for Music with distance calculation
-    DstMusic::DstMusic(std::string path, int loops) : Music(path, loops) {}
+    DstMusic::DstMusic(std::string path, int loops, std::string name) : Music(path, loops, name) {}
 
     void DstMusic::setPosition(Vector2 position) {
         this->position = position;

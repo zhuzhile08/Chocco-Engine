@@ -10,24 +10,18 @@ namespace chocco {
 	class PolygonHitbox : noud::Node {
 	private:
 		Vector2 a, b, c, position;
-		std::string name = "hitbox";
-		std::string type = "PolygonHitbox";
 	public:
-		PolygonHitbox(Vector2 a, Vector2 b, Vector2 c,  Vector2 position);
+		PolygonHitbox(Vector2 a, Vector2 b, Vector2 c,  Vector2 position, std::string name = "PolygonHitbox");
 		~PolygonHitbox();
 		bool collisionCheck(Vector2 p);
 		void move(Vector2 destPos);
-
-		
 	};
 
 	class RectHitbox : noud::Node {
 	private:
 		Vector2 a, b, c, d, position;
-		std::string name = "hitbox";
-		std::string type = "RectHitbox";
 	public:
-		RectHitbox(Vector2 a, Vector2 b, Vector2 position);
+		RectHitbox(Vector2 a, Vector2 b, Vector2 position, std::string name = "RectHitbox");
 		~RectHitbox();
 		bool collisionCheck(Vector2 p);
 		void move(Vector2 destPos);
@@ -39,15 +33,11 @@ namespace chocco {
 	private:
 		double radius;
 		Vector2 position;
-		std::string name = "hitbox";
-		std::string type = "CircleHitbox";
 	public:
-		CircleHitbox(double radius, Vector2 position);
+		CircleHitbox(double radius, Vector2 position, std::string name = "CircleHitbox");
 		~CircleHitbox();
 		bool collisionCheck(Vector2 p);
 		void move(Vector2 destPos);
-
-		
 	};
 }
 

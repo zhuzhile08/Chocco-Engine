@@ -41,7 +41,7 @@ namespace chocco {
 
 	public:
 		Font();
-		Font(std::string name, Vector2 position, Vector2 scale, double rotation);
+		Font(Vector2 position, Vector2 scale, double rotation, std::string name = "Font");
 
 		void destroy();
 

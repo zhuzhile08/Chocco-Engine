@@ -21,39 +21,30 @@
 
 namespace chocco {
     class SpriteGroup : noud::Node {
-	private:
-		std::string type = "SpriteGroup";
 	public:
 		std::map <std::string, Sprite> group;
 		SpriteGroup();
+		SpriteGroup(std::string name = "SpriteGroup");
 		void add(Sprite sprite);
 		void remove(std::string name);
 		void update();
-
-		
 	};
 
 	class ObjGroup : noud::Node {
-	private:
-		std::string type = "ObjGroup";
 	public:
 		std::map <std::string, Object> group;
 		ObjGroup();
+		ObjGroup(std::string name = "ObjGroup");
 		void add(Object obj);
 		void remove(std::string name, int check);
-		
-		
 	};
 
 	class TileGroup : noud::Node {
-	private:
-		std::string type = "TileGroup";
 	public:
 		std::map <std::string, Tilemap> group;
 		TileGroup();
+		TileGroup(std::string name = "TileGroup");
 		void add(Tilemap tile);
 		void remove(std::string name);
-
-		
 	};
 }

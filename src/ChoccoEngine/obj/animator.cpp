@@ -1,7 +1,7 @@
 #include "animator.h"
 
 namespace chocco {
-    // constructors
+    // constructor for the Animations
     Animation::Animation(std::string name) : name(name) { }
 
     // functions for the Animation class
@@ -13,11 +13,6 @@ namespace chocco {
         playing = false;
     }
 
-    // getters and setters
-    std::string Animation::getName() {
-        return name;
-    }
-
     bool Animation::getPlaying() {
         return playing;
     }
@@ -25,6 +20,9 @@ namespace chocco {
     void Animation::setPlaying(bool playing) {
         this->playing = playing;
     }
+
+    // constructors for the Animators
+    Animator::Animator(std::string name) : Node(nullptr, name) {}
 
     // functions for the Animator class 
     void Animator::addAnimation(Animation animation) {

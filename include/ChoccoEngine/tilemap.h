@@ -28,8 +28,6 @@ namespace chocco {
         SDL_Texture* baseTexture = nullptr, *texture = nullptr;
         std::vector <SDL_Rect> tiles;
         std::vector <std::vector <int>> tileData;
-        std::string name = "tilemap";
-        std::string type = "Tilemap";
 
         int clipSize;
         Vector2 size = {0, 0};
@@ -37,6 +35,7 @@ namespace chocco {
         std::string loadFile(std::string path, int row);
     public:
         Tilemap();
+        Tilemap(std::string name = "Tilemap");
         void destroy();
 
         void loadTileMap(std::string path, SDL_Renderer* renderer);

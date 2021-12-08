@@ -9,14 +9,12 @@
 namespace chocco {
     class Timer : noud::Node {
     protected:
-        std::string name = "timer";
-        std::string type = "Timer";
         bool stopped = true;
         bool repeat = false;
         int waitTime = 0;
     public:
         Timer();
-        Timer(bool repeat, int waitTime);
+        Timer(bool repeat, int waitTime, std::string name = "Timer");
 
         void start();
         void stop();

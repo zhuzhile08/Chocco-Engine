@@ -1,6 +1,9 @@
 #include <ChoccoEngine/group.h>
 
 namespace chocco {
+	// consturctor for the SpriteGroup
+	SpriteGroup::SpriteGroup(std::string name) : Node(nullptr, name) { }
+
 	// functions for the SpriteGroup
 	void SpriteGroup::add(Sprite sprite) {
 #ifndef ndebug
@@ -25,6 +28,9 @@ namespace chocco {
 		}
 	}
 
+	// constuctor for the ObjectGroup
+	ObjGroup::ObjGroup(std::string name) : Node(nullptr, name) { }
+
 	// functions for the ObjGroup
 	void ObjGroup::add(Object obj) {
 #ifndef ndebug
@@ -45,6 +51,9 @@ namespace chocco {
 		} else group.erase(name);
 	}
 
+	// constuctor for the TileGroup
+	TileGroup::TileGroup(std::string name) : Node(nullptr, name) { }
+
 	// functions for the TileGroup
 	void TileGroup::add(Tilemap tilemap) {
 #ifndef ndebug
@@ -62,5 +71,4 @@ namespace chocco {
 	void TileGroup::remove(std::string name) {
 		group.erase(name);
 	}
-
 }

@@ -4,7 +4,7 @@ namespace chocco {
     // Consturctor
     Object::Object() {}
 
-    Object::Object(std::string name, Vector2 position, Vector2 scale, double rotation) : position(position), scale(scale), rotation(rotation), name(name) { }
+    Object::Object(Vector2 position, Vector2 scale, double rotation, std::string name) : position(position), scale(scale), rotation(rotation), Node(nullptr, name) { }
 
     // update function
     void Object::update() {
@@ -12,10 +12,6 @@ namespace chocco {
     }
 
     // some getters and setters
-    std::string Object::getName() {
-        return name;
-    } 
-    
     Vector2 Object::getPosition() {
         return position;
     } 

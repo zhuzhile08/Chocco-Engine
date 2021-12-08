@@ -39,10 +39,10 @@ namespace chocco {
 
     class Animator : noud::Node {
     protected:
-        std::string type = "Animator";
         std::map <std::string, Animation> animations;
     public:
         Animator();
+        Animator(std::string name = "Animator");
         void addAnimation(Animation animation);
         void playAnimation(std::string animationName);
         void stopAnimation(std::string animationName);

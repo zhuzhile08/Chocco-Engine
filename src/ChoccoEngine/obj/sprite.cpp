@@ -4,7 +4,7 @@ namespace chocco {
 	//consturctors and desturctors
 	Sprite::Sprite() : Object() {}
 
-	Sprite::Sprite(std::string name, Vector2 position, Vector2 scale, double rotation) : Object(name, position, scale, rotation) {}
+	Sprite::Sprite(Vector2 position, Vector2 scale, double rotation, std::string name) : Object(position, scale, rotation, name) {}
 
 	void Sprite::destory() {
 		SDL_DestroyTexture(texture);

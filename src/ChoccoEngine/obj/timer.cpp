@@ -2,7 +2,7 @@
  
 namespace chocco {
     // constructor
-    Timer::Timer(bool repeat, int waitTime) : repeat(repeat), waitTime(waitTime) { }
+    Timer::Timer(bool repeat, int waitTime, std::string name) : repeat(repeat), waitTime(waitTime), Node(nullptr, name) { }
 
     // some functions
     void Timer::start() {

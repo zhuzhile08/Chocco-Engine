@@ -1,7 +1,9 @@
 #include <ChoccoEngine/tilemap.h>
 
 namespace chocco {
-// functions
+// constructors and "destructors"
+    Tilemap::Tilemap(std::string name) : Node(nullptr, name) { }
+
     void Tilemap::destroy() {
         SDL_DestroyTexture(texture);
         SDL_DestroyTexture(baseTexture);

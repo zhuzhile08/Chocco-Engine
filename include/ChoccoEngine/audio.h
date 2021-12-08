@@ -21,14 +21,13 @@
 namespace chocco {
     class SFX : noud::Node {
     protected:
-        std::string type = "SFX";
         int channel;
         int loops;
 
         std::string path;
         Mix_Chunk* sound;
     public:
-        SFX();
+        SFX(std::string name = "SFX");
         SFX(std::string path, int channel, int loops);
         void destroy();
         virtual void play();
@@ -38,18 +37,16 @@ namespace chocco {
 
     class DstSFX : SFX {
     protected:
-        std::string type = "DstSFX";
         Vector2 position;
     public:
         DstSFX();
-        DstSFX(std::string path, int channel, int loops);
+        DstSFX(std::string path, int channel, int loops, std::string name = "DstSFX");
         void setPosition(Vector2 position);
         void play(Object dest);
     };
 
     class Music : noud::Node {
     protected:
-        std::string type = "Music";
         bool playing;
         bool paused;
 
@@ -61,7 +58,7 @@ namespace chocco {
         int channel = 8;
     public:
         Music();
-        Music(std::string path, int loops);
+        Music(std::string path, int loops, std::string name = "Music");
         void destroy();
 
         virtual void play();
@@ -73,11 +70,10 @@ namespace chocco {
 
     class DstMusic : Music {
     protected:
-        std::string type = "DstMusic";
         Vector2 position;
     public:
         DstMusic();
-        DstMusic(std::string path, int loops);
+        DstMusic(std::string path, int loops, std::string name = "DstMusic");
 
         void setPosition(Vector2 position);
         virtual void play(Object dst);

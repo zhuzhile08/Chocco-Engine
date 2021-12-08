@@ -9,13 +9,11 @@ namespace chocco {
     class Object : noud::Node {
     protected:
         Vector2 position, scale;
-        std::string name = "Object";
-        std::string type = "Object";
         int flipped = 1;
         double rotation = 0;
     public:
         Object();
-        Object(std::string name, Vector2 position, Vector2 scale, double rotation);
+        Object(Vector2 position, Vector2 scale, double rotation, std::string name = "Object");
 
         virtual void update();
 

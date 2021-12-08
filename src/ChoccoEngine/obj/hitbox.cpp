@@ -18,7 +18,7 @@ namespace chocco
 	* 
 	**/
 
-	PolygonHitbox::PolygonHitbox(Vector2 a, Vector2 b, Vector2 c, Vector2 position) : a(a), b(b), c(c), position(position) { }
+	PolygonHitbox::PolygonHitbox(Vector2 a, Vector2 b, Vector2 c, Vector2 position, std::string name) : a(a), b(b), c(c), position(position), Node(nullptr, name) { }
 
 	bool PolygonHitbox::collisionCheck(Vector2 p) {
 		double m1 = (a.x * (c.y - a.y) + (p.y * a.y) * (c.x - a.x) - p.x * (c.y - a.y)) / ((b.y - a.y) * (c.x - a.x) - (b.x - a.x) * (c.y - a.y));
@@ -46,7 +46,7 @@ namespace chocco
 	* 
 	**/
 
-	RectHitbox::RectHitbox(Vector2 c, Vector2 b, Vector2 position) : a(b.x, c.y), b(b), c(c), d(c.x, b.y), position(position) { }
+	RectHitbox::RectHitbox(Vector2 c, Vector2 b, Vector2 position, std::string name) : a(b.x, c.y), b(b), c(c), d(c.x, b.y), position(position), Node(nullptr, name) { }
 
 	bool RectHitbox::collisionCheck(Vector2 p) {
 		if (p.x <= a.x || p.x >= b.x || p.y >= c.y || p.y <= a.y) return true;
@@ -62,7 +62,7 @@ namespace chocco
 	* The simplest form of colliders. it's very quick and efficient, perfect for sprites.
 	**/
 
-	CircleHitbox::CircleHitbox(double radius, Vector2 position) : radius(radius), position(position) { }
+	CircleHitbox::CircleHitbox(double radius, Vector2 position, std::string name) : radius(radius), position(position), Node(nullptr, name) { }
 
 	bool CircleHitbox::collisionCheck(Vector2 p) {
 		if (pythagoras(position, p) == radius) return true;

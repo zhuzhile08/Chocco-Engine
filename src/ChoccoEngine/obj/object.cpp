@@ -39,8 +39,4 @@ namespace chocco {
     void Object::resize(Vector2 newScale) {
         scale += newScale;
     }
-
-    std::string Object::getType() {
-        return type;
-    }
 }

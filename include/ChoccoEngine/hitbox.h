@@ -18,7 +18,7 @@ namespace chocco {
 		bool collisionCheck(Vector2 p);
 		void move(Vector2 destPos);
 
-		std::string getType();
+		
 	};
 
 	class RectHitbox : noud::Node {
@@ -32,7 +32,7 @@ namespace chocco {
 		bool collisionCheck(Vector2 p);
 		void move(Vector2 destPos);
 
-		std::string getType();
+		
 	};
 
 	class CircleHitbox : noud::Node {
@@ -47,7 +47,7 @@ namespace chocco {
 		bool collisionCheck(Vector2 p);
 		void move(Vector2 destPos);
 
-		std::string getType();
+		
 	};
 }
 

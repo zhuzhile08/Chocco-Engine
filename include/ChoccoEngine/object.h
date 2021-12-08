@@ -20,7 +20,7 @@ namespace chocco {
         virtual void update();
 
         std::string getName();
-        std::string getType();
+        
         Vector2 getPosition();
         Vector2 getScale();
         double getRotation();

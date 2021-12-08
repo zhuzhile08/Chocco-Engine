@@ -46,7 +46,5 @@ namespace chocco {
         void addAnimation(Animation animation);
         void playAnimation(std::string animationName);
         void stopAnimation(std::string animationName);
-
-        std::string getType();
     };
 }

@@ -22,9 +22,6 @@ namespace chocco {
 #endif
     }
 
-    std::string SFX::getType() {
-        return type;
-    }
 
 // constructors and "destructors" for Sound Effects with distance calculation
     DstSFX::DstSFX(std::string path, int channel, int loops) : SFX(path, channel, loops) { }
@@ -112,10 +109,6 @@ namespace chocco {
         if (playing) {
             Mix_FadeOutMusic(time);
         }
-    }
-
-    std::string Music::getType() {
-        return type;
     }
 
 // constructors and "destructors" for Music with distance calculation

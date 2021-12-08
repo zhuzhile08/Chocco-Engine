@@ -21,7 +21,7 @@ namespace chocco {
         void start();
         void stop();
 
-        std::string getType();
+        
         int getWaitTime();
         bool getRepeat();
 

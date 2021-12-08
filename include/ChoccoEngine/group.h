@@ -30,7 +30,7 @@ namespace chocco {
 		void remove(std::string name);
 		void update();
 
-		std::string getType();
+		
 	};
 
 	class ObjGroup : noud::Node {
@@ -42,7 +42,7 @@ namespace chocco {
 		void add(Object obj);
 		void remove(std::string name, int check);
 		
-		std::string getType();
+		
 	};
 
 	class TileGroup : noud::Node {
@@ -54,6 +54,6 @@ namespace chocco {
 		void add(Tilemap tile);
 		void remove(std::string name);
 
-		std::string getType();
+		
 	};
 }

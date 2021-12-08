@@ -33,7 +33,7 @@ namespace chocco {
         void destroy();
         virtual void play();
 
-        std::string getType();
+        
     };
 
     class DstSFX : SFX {
@@ -69,8 +69,6 @@ namespace chocco {
         void pause();
         void stop();
         void stop(int time);
-
-        std::string getType();
     };
 
     class DstMusic : Music {

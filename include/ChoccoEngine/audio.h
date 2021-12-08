@@ -27,8 +27,8 @@ namespace chocco {
         std::string path;
         Mix_Chunk* sound;
     public:
-        SFX(std::string name = "SFX");
-        SFX(std::string path, int channel, int loops);
+        SFX();
+        SFX(std::string path, int channel, int loops, std::string name = "SFX");
         void destroy();
         virtual void play();
 

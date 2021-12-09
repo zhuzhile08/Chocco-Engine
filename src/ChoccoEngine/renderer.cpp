@@ -39,7 +39,7 @@ namespace chocco {
         }
 #endif
 #ifdef ndebug
-        SDL_RenderDrawPointF(renderer, pos.x, pos.y)
+        SDL_RenderDrawPointF(renderer, pos.x, pos.y);
 #endif
 
         SDL_SetRenderDrawColor(renderer, last.r, last.g, last.b, last.a);
@@ -57,37 +57,9 @@ namespace chocco {
         }
 #endif
 #ifdef ndebug
-        SDL_RenderDrawLineF(renderer, coord1.x, coord1.y, coord2.x, coord2.y)
+        SDL_RenderDrawLineF(renderer, coord1.x, coord1.y, coord2.x, coord2.y);
 #endif
 
-        SDL_SetRenderDrawColor(renderer, last.r, last.g, last.b, last.a);
-    }
-
-    void Renderer::drawRect(SDL_FRect rect, SDL_Color color, bool filled) {
-        SDL_Color last;
-
-        SDL_GetRenderDrawColor(renderer, &last.r, &last.g, &last.b, &last.a);
-        SDL_SetRenderDrawColor(renderer, color.r, color.g, color.b, color.a);
-
-#ifndef ndebug
-        if (filled) {
-            if (SDL_RenderDrawRectF(renderer, &rect) != 0) {
-                SDLError("SDL renderer drawPoint error");
-            }
-        } else {
-            if (SDL_RenderFillRectF(renderer, &rect) != 0) {
-                SDLError("SDL renderer drawPoint error");
-            }
-        }
-#endif
-#ifdef ndebug
-        if (filled) {
-            SDL_RenderDrawRectF(renderer, &rect) != 0
-        } else {
-            SDL_RenderFillRectF(renderer, &rect)
-        }
-#endif
-        
         SDL_SetRenderDrawColor(renderer, last.r, last.g, last.b, last.a);
     }
 
@@ -98,7 +70,7 @@ namespace chocco {
         if (SDL_RenderCopyExF(renderer, sprite.getTexture(), sprite.getClip(), &dst, sprite.getRotation(), &sprite.getRotationCenter(), SDL_FLIP_NONE) != 0) SDLError("SDL draw texture (sprite) error");
 #endif
 #ifdef ndebug
-        SDL_RenderCopyExF(renderer, sprite.getTexture(), sprite.getClip(), &dst, sprite.getRotation(), &sprite.getRotationCenter(), SDL_FLIP_NONE)
+        SDL_RenderCopyExF(renderer, sprite.getTexture(), sprite.getClip(), &dst, sprite.getRotation(), &sprite.getRotationCenter(), SDL_FLIP_NONE);
 #endif
 
     }
@@ -116,7 +88,7 @@ namespace chocco {
         if (SDL_RenderCopyF(renderer, tilemap.getTexture(), NULL, &dst) != 0) SDLError("SDL draw texture (sprite) error");
 #endif
 #ifdef ndebug
-        SDL_RenderCopyF(renderer, tilemap.getTexture(), tilemap.getClip(), &dst)
+        SDL_RenderCopyF(renderer, tilemap.getTexture(), tilemap.getClip(), &dst);
 #endif
 
     }
@@ -125,5 +97,81 @@ namespace chocco {
         for (std::pair<std::string, Tilemap> pair : group.group) {
 			drawTilemap(pair.second);
 		} 
+    }
+
+    void Renderer::drawPoint(Vector2 pos, SDL_Color color, SDL_Texture* layer) {
+        SDL_SetTextureBlendMode(layer, SDL_BLENDMODE_BLEND);
+        SDL_SetRenderTarget(renderer, layer);
+
+        drawPoint(pos, color);
+
+        SDL_SetRenderTarget(renderer, NULL);
+    }
+
+    void Renderer::drawLine(Vector2 coord1, Vector2 coord2, SDL_Color color, SDL_Texture* layer) {
+        SDL_SetTextureBlendMode(layer, SDL_BLENDMODE_BLEND);
+        SDL_SetRenderTarget(renderer, layer);
+
+        drawLine(coord1, coord2, color);
+
+        SDL_SetRenderTarget(renderer, NULL);
+    }
+
+    void Renderer::drawRect(SDL_FRect rect, SDL_Color color, double rotation, bool filled, SDL_Texture* layer) {
+        SDL_SetTextureBlendMode(layer, SDL_BLENDMODE_BLEND);
+        SDL_SetRenderTarget(renderer, layer);
+
+        drawRect(rect, color, rotation, filled);
+
+        SDL_SetRenderTarget(renderer, NULL);
+    }
+
+    void Renderer::drawSprite(Sprite sprite, SDL_Texture* layer) {
+        SDL_SetTextureBlendMode(layer, SDL_BLENDMODE_BLEND);
+        SDL_SetRenderTarget(renderer, layer);
+
+        drawSprite(sprite);
+
+        SDL_SetRenderTarget(renderer, NULL);
+    }
+    
+    void Renderer::drawSpriteGroup(SpriteGroup group, SDL_Texture* layer) {
+        SDL_SetTextureBlendMode(layer, SDL_BLENDMODE_BLEND);
+        SDL_SetRenderTarget(renderer, layer);
+
+        drawSpriteGroup(group);
+
+        SDL_SetRenderTarget(renderer, NULL);
+    }
+
+    void Renderer::drawTilemap(Tilemap tilemap, SDL_Texture* layer) {
+        SDL_SetTextureBlendMode(layer, SDL_BLENDMODE_BLEND);
+        SDL_SetRenderTarget(renderer, layer);
+
+        drawTilemap(tilemap);
+
+        SDL_SetRenderTarget(renderer, NULL);
+    }
+    
+    void Renderer::drawTileGroup(TileGroup group, SDL_Texture* layer) {
+        SDL_SetTextureBlendMode(layer, SDL_BLENDMODE_BLEND);
+        SDL_SetRenderTarget(renderer, layer);
+
+        drawTileGroup(group);
+
+        SDL_SetRenderTarget(renderer, NULL);
+    }
+
+    void Renderer::drawLayer(SDL_Texture* layer) {
+        int w, h;
+        SDL_QueryTexture(layer, NULL, NULL, &w, &h);
+        SDL_FRect dst = {0, 0, w, h};
+
+#ifndef ndebug
+        if (SDL_RenderCopyF(renderer, layer, NULL, &dst) != 0) SDLError("SDL draw texture (sprite) error");
+#endif
+#ifdef ndebug
+        SDL_RenderCopyF(renderer, layer, NULL, &dst);
+#endif
     }
 }

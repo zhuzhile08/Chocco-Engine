@@ -24,19 +24,18 @@ namespace chocco {
         SDL_Renderer* renderer;
         int flags;
         
+        // some basic functions
         Renderer();
         Renderer(SDL_Window* window, int flags);
-        // ~Renderer();
 
         void clear();
         void present();
 
         void destroy();
 
+        // raw drawing functions
         void drawPoint(Vector2 pos, SDL_Color color);
         void drawLine(Vector2 coord1, Vector2 coord2, SDL_Color color);
-
-        void drawRect(SDL_FRect rect, SDL_Color color, bool filled);
         void drawRect(SDL_FRect rect, SDL_Color color, double rotation, bool filled);
 
         void drawSprite(Sprite sprite);
@@ -44,5 +43,18 @@ namespace chocco {
 
         void drawTilemap(Tilemap tilemap);
         void drawTileGroup(TileGroup group);
+
+        // draw stuff to layers
+        void drawPoint(Vector2 pos, SDL_Color color, SDL_Texture* layer);
+        void drawLine(Vector2 coord1, Vector2 coord2, SDL_Color color, SDL_Texture* layer);
+        void drawRect(SDL_FRect rect, SDL_Color color, double rotation, bool filled, SDL_Texture* layer);
+
+        void drawSprite(Sprite sprite, SDL_Texture* layer);
+        void drawSpriteGroup(SpriteGroup group, SDL_Texture* layer);
+
+        void drawTilemap(Tilemap tilemap, SDL_Texture* layer);
+        void drawTileGroup(TileGroup group, SDL_Texture* layer);
+
+        void drawLayer(SDL_Texture* layer);
     };
 }

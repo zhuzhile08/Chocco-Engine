@@ -3,6 +3,7 @@
 #include <map>
 #include <SDL.h>
 #include <SDL_image.h>
+#include <gameVar.h>
 
 #ifndef ndebug
 #include <ChoccoEngine/error.h>

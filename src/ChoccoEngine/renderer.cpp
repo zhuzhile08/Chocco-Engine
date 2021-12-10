@@ -173,5 +173,9 @@ namespace chocco {
 #ifdef ndebug
         SDL_RenderCopyF(renderer, layer, NULL, &dst);
 #endif
+
+        SDL_Surface* cleanup = SDL_CreateRGBSurface(0, width, height, 32, 0, 0, 0, 0);
+        layer = SDL_CreateTextureFromSurface(renderer, cleanup);
+        SDL_FreeSurface(cleanup);
     }
 }

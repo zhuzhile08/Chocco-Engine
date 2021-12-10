@@ -27,18 +27,17 @@ namespace chocco {
 
 		running = true;
 
-		test = Sprite("bob", {100, 100}, {1, 1}, 16);
-		test.initSpriteTexture(renderer.renderer, "assets/img/TextureError.png");
-		test.initSpriteAttributes(nullptr, Point(test.getWidth()/2, test.getHeight()/2));
-
-		text = Font("bob", {69, 420}, {1, 1}, 47);
-		text.initFontSurface(renderer.renderer, "assets/ttf/sample.ttf", Color(255, 255, 255, 255), 16, "sheeesh");
-		text.initFontTexture(renderer.renderer);
+		for (SDL_Texture *& texture : layers) {
+			texture = SDL_CreateTexture(renderer.renderer, SDL_PIXELFORMAT_RGBA8888, SDL_TEXTUREACCESS_TARGET, width, height);
+		}
 	}
 
-	GameManager::~GameManager() {
+	void GameManager::destroy() {
 		SDL_DestroyWindow(window);
 		renderer.destroy();
+		for (SDL_Texture * texture : layers) {
+			SDL_DestroyTexture(texture);
+		}
 		IMG_Quit();
 		TTF_Quit();
 		SDL_Quit();
@@ -55,12 +54,11 @@ namespace chocco {
 	void GameManager::update() {
 		while (running) {
 			events();
-		
+
 			renderer.clear();
-
-			renderer.drawSprite(test);
-			renderer.drawSprite(text);
-
+			for (SDL_Texture * texture : layers) {
+				renderer.drawLayer(texture);
+			}
 			renderer.present();
 		}
 	}

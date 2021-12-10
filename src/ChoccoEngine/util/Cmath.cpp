@@ -1,11 +1,7 @@
 #include <ChoccoEngine/Cmath.h>
 
 namespace chocco {
-	/**
-	* fast Square root algorythm
-	* goes through this while loop until result is close enough to the actual value
-	* the variable maxDiff can be
-	**/
+	// fast square root algorythm
 	double fastSqrt(double a) {
 		double maxDiff = 0.01, result = a / 2;
 		while (fabs(result * result - a) > maxDiff) {
@@ -14,12 +10,13 @@ namespace chocco {
 		return result;
 	}
 
-// Vector class
+	// Vector class
+
 	Vector2::Vector2() : x(0), y(0) { }
 
 	Vector2::Vector2(double x, double y) : x(x), y(y) { }
 
-	// this can make changing the values in the vector a bit easier
+	// functions for the vector class
 
 	Vector2 Vector2::operator*(double a) {
 		return Vector2(x * a, y * a);
@@ -79,6 +76,8 @@ namespace chocco {
 		return result;
 	}
 
+	// some math functions
+
 	double FPS() {
 		return 1000/SDL_GetTicks();
 	}
@@ -87,7 +86,16 @@ namespace chocco {
 		return 1/(1+pow(EULER, x));
 	}
 
-	double sigmoidMod(double t, double maxResult, double current) {
-		return sigmoid(3-((6/current*maxResult))) * maxResult;
+	void sigmoidMod(double num, double result, double time) { // this is basicly a function for non-linear interpolation of a number using a modified sigmoid fuction
+		double originalNum = num, constant = 6 / time * 1000 * result, currentX = -6;
+
+		while (currentX != 6) {
+			num = originalNum + sigmoid(currentX);
+			currentX += constant/FPS();
+		}
+	}
+
+	double randDoub(double x, double y, int precision) {
+		return double(rand() % precision) * (y - x)/precision;
 	}
 }

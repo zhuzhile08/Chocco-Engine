@@ -1,6 +1,8 @@
 #pragma once
+
 #include <SDL.h>
 #include <cmath>
+#include <cstdlib>
 
 /**
  * math file
@@ -45,7 +47,8 @@ namespace chocco {
 	// math operations
 	double fastSqrt(double a);
 	double pythagoras(Vector2 a, Vector2 b);
-	double sigmoidMod(double t, double maxR);
+	void sigmoidMod(double t, double maxR);
+	double randDoub(double x, double y, int precision);
 
 	double FPS();
 }
